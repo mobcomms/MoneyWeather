@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.MyCouponViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <View
+            android:id="@+id/lineToolbar"
+            style="@style/HorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iActionBar" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="txtNotice,lineNotice"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtNotice"
+            style="@style/FontStyle.PinkishGrey.Small"
+            android:layout_width="0dp"
+            android:background="@color/white_two"
+            android:drawablePadding="@dimen/space_xxxsmall"
+            android:paddingStart="@dimen/space_medium"
+            android:paddingTop="@dimen/space_xxsmall"
+            android:paddingEnd="@dimen/space_medium"
+            android:paddingBottom="@dimen/space_xxsmall"
+            android:text="@string/my_coupon_box_notice"
+            app:drawableStartCompat="@drawable/notice_ico"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineToolbar" />
+
+        <View
+            android:id="@+id/lineNotice"
+            style="@style/HorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNotice" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layRefresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineNotice">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCoupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/viewholder_coupon"
+                    tools:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/layDataLoadFailureView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ico_error_wifi" />
+
+                    <TextView
+                        style="@style/FontStyle.Black.Large"
+                        android:layout_marginTop="@dimen/space_huge"
+                        android:text="@string/network_error_message_1" />
+
+                    <TextView
+                        style="@style/FontStyle.PinkishGrey.Small"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        android:text="@string/network_error_message_1" />
+
+                    <Button
+                        android:id="@+id/btnRetry"
+                        style="@style/ButtonStyle"
+                        android:layout_marginTop="@dimen/space_huge"
+                        android:minHeight="@dimen/height_button"
+                        android:onClick="onClick"
+                        android:paddingStart="@dimen/space_huge"
+                        android:paddingEnd="@dimen/space_huge"
+                        android:text="@string/retry" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ico_caution" />
+
+                    <TextView
+                        android:id="@+id/txtEmpty"
+                        style="@style/FontStyle.PinkishGrey"
+                        android:layout_marginTop="@dimen/space_huge"
+                        android:gravity="center"
+                        android:lineSpacingExtra="6sp"
+                        android:text="@string/coupon_list_empty"
+                        android:textSize="@dimen/font_dialog_title" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/HCProgressBar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineToolbar"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

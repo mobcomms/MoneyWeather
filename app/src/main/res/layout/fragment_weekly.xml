@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.moneyweather.util.DateUtil" />
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.ThemeWeatherViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <!--첫번째 인덱스: 오늘 기준-->
+        <LinearLayout
+            android:id="@+id/monLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/tueLayout"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/day_week_color"
+                android:textSize="11sp"
+                tools:text="@string/mon" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 0 ? vm.weatherInfos.get(0).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 0 ? vm.weatherInfos.get(0).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 0 ? vm.weatherInfos.get(0).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tueLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/wedLayout"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/monLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/tue" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 1 ? vm.weatherInfos.get(1).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 1 ? vm.weatherInfos.get(1).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 1 ? vm.weatherInfos.get(1).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wedLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/thuLayout"
+            app:layout_constraintStart_toEndOf="@+id/tueLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/wed" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 2 ? vm.weatherInfos.get(2).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 2 ? vm.weatherInfos.get(2).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 2 ? vm.weatherInfos.get(2).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thuLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/friLayout"
+            app:layout_constraintStart_toEndOf="@+id/wedLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/thu" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 3 ? vm.weatherInfos.get(3).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 3 ? vm.weatherInfos.get(3).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 3 ? vm.weatherInfos.get(3).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/friLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/satLayout"
+            app:layout_constraintStart_toEndOf="@+id/thuLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/fri" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 4 ? vm.weatherInfos.get(4).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 4 ? vm.weatherInfos.get(4).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 4 ? vm.weatherInfos.get(4).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/satLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/sunLayout"
+            app:layout_constraintStart_toEndOf="@+id/friLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/sat" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 5 ? vm.weatherInfos.get(5).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 5 ? vm.weatherInfos.get(5).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 5 ? vm.weatherInfos.get(5).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/sunLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/satLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dayOfWeek6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="@string/sun" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@{vm.weatherInfos.size() > 6 ? vm.weatherInfos.get(6).weatherImage():null}"
+                app:layout_constraintBottom_toBottomOf="@+id/dustLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dustLayout"
+                tools:src="@drawable/icon_weather_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 6 ? vm.weatherInfos.get(6).maxTemp():@string/empty}"
+                android:textColor="@color/grey_74"
+                android:textSize="11sp"
+                tools:text="23" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.weatherInfos.size() > 6 ? vm.weatherInfos.get(6).minTemp():@string/empty}"
+                android:textColor="@color/low_temp_color"
+                android:textSize="11sp"
+                tools:text="23" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

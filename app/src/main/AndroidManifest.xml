@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS"
+        android:minSdkVersion="33" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"  />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MoneyWeather"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Edge to edge 적용 제외 -->
+        <meta-data
+            android:name="android.window.WindowLayout.windowOptOutEdgeToEdgeEnforcement"
+            android:value="true" />
+
+        <activity
+            android:name=".view.SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- KakaoLink 처리 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="kakaolink"
+                    android:scheme="${kakaoScheme}" />
+            </intent-filter>
+
+            <!-- DonseeLink 처리 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="donseelink"
+                    android:scheme="donsee" />
+            </intent-filter>
+
+            <!-- 공유 받기  -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".view.SettingActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name=".view.ProductDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.PhoneCertifiedActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.CouponDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.TermsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.MyCouponActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.WithdrawActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.InviteFriendActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.MyPointActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.ThemeSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="oauth"
+                    android:scheme="${kakaoScheme}" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".view.StoreActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".view.LockScreenActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:showWhenLocked="true"
+            android:taskAffinity=""
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW"
+            android:theme="@style/Theme.LockScreen"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".view.LockScreenWebViewActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW"
+            android:screenOrientation="portrait"
+            android:turnScreenOn="true" />
+
+        <activity android:name=".view.AppWebViewActivity" />
+
+        <activity android:name=".view.MissionZoneActivity" />
+
+        <activity
+            android:name="com.nextapps.naswall.NASWallBrowser"
+            android:exported="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <activity
+            android:name="com.nextapps.naswall.NASWall"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <activity
+            android:name="com.igaworks.adpopcorn.activity.ApOfferWallActivity_NT"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+
+        <activity
+            android:name="com.igaworks.adpopcorn.activity.ApVideoAdActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+        <activity
+            android:name="com.tnkfactory.ad.AdWallActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".view.RecommendCodeInputActivity" />
+
+        <activity android:name=".view.PushSettingActivity" />
+
+        <activity android:name=".view.MarketingPushAgreeActivity" />
+
+        <!-- MetaData Start -->
+        <meta-data
+            android:name="naswall_app_key"
+            android:value="${nasmediaAppKey}" />
+
+        <meta-data
+            android:name="adpopcorn_reward_server_type"
+            android:value="${adpopcornRewardServerType}" />
+
+        <meta-data
+            android:name="adpopcorn_app_key"
+            android:value="${adpopcornAppKey}" />
+
+        <meta-data
+            android:name="adpopcorn_hash_key"
+            android:value="@{adpopcornHashKey}" />
+
+        <meta-data
+            android:name="tnkad_app_id"
+            android:value="${tnkadAppId}" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="${kakaoAppKey}" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- MetaData End -->
+
+        <!-- 락스크린 서비스 -->
+        <service
+            android:name=".service.LockScreenService"
+            android:exported="true"
+            android:foregroundServiceType="specialUse|location"
+            android:stopWithTask="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="REST API를 통해 가져온 날씨 정보 데이터를 사용자에게 제공합니다." />
+        </service>
+
+        <!-- 락스크린 restart 서비스 -->
+        <!-- 락스크린 서비스 onDestroy 시 알림 receiver -->
+        <receiver
+            android:name=".service.RebootAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".service.PhoneStateReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 휴대폰 재시작 시 락스크린 서비스 restart -->
+        <receiver
+            android:name=".service.RebootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--[START FCM]-->
+        <service
+            android:name=".fcm.FCMService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!--[END FCM]-->
+
+        <service
+            android:name=".service.OverlayProgressService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".service.AppUpdateReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".service.NotificationDeleteReceiver"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

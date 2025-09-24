@@ -1,0 +1,480 @@
+<resources>
+    <string name="app_name">돈씨</string>
+    <string name="empty"></string>
+    <string name="app_version">현재 버전 %s</string>
+    <string name="new_version"> (최신 버전 %s)</string>
+    <string name="use_new_version">최신 버전 이용중</string>
+    <string name="search_hint">검색 힌트</string>
+    <string name="server_error">서버와의 연결에 오류가 발생했습니다.</string>
+    <string name="error_network">네트워크 에러입니다.다시 시도해 주세요</string>
+    <string name="bottom_nav_home">홈</string>
+    <string name="bottom_nav_store">상점</string>
+    <string name="bottom_nav_charge">충전소</string>
+    <string name="bottom_nav_my">마이</string>
+    <string name="ok">확인</string>
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+    <string name="setting">설정</string>
+    <string name="complete">완료</string>
+    <string name="receipt">접수</string>
+    <string name="region">지역</string>
+    <string name="weather">날씨</string>
+    <string name="theme">테마</string>
+    <string name="theme_choice">테마 선택</string>
+    <string name="theme_preview">테마 미리보기 &gt;</string>
+    <string name="theme_select">테마 적용 &gt;</string>
+    <string name="theme_apply">적용중</string>
+    <string name="theme_apply2">적용하기</string>
+    <string name="theme_subject_info">정보형 테마</string>
+    <string name="theme_desc_info">한눈에 모든 정보를!\n날씨와 포인트를 한 화면에서 확인하세요.</string>
+    <string name="theme_subject_simple">심플형 테마</string>
+    <string name="theme_desc_simple">깔끔하고 직관적인 디자인!\n기본 정보만 간단하게 보여드립니다.</string>
+    <string name="theme_subject_calendar">달력형 테마</string>
+    <string name="theme_desc_calendar">날씨와 일정 관리를 한번에!\n캘린더와 함께 포인트를 확인하세요.</string>
+    <string name="theme_subject_background">배경형 테마</string>
+    <string name="theme_desc_background">아름다운 배경과 함께!\n멋진 배경화면 위에 날씨 정보를 표시 해드립니다.</string>
+    <string name="theme_subject_video">영상형 테마</string>
+    <string name="theme_desc_video">실감나는 영상으로!\n오늘의 날씨를 생동감 있게 느껴보세요.</string>
+    <string name="app_fcm_channel_id">MoneyWeatherChannelId</string>
+    <string name="app_fcm_channel_name">MoneyWeather</string>
+    <string name="app_fcm_channel_push_id">MoneyWeatherPushlId</string>
+    <string name="app_fcm_channel_push_name">알림</string>
+    <string name="slide_text">밀어서 잠금해제 &gt;&gt;</string>
+    <string name="error_try_later">잠시후 다시 시도해주시기 바랍니다.</string>
+    <string name="don_see">돈씨</string>
+    <string name="login_title1">날씨가 돈이 되는 순간, 돈씨</string>
+    <string name="login_title2">돈씨와 함께라면</string>
+    <string name="login_title3_1">날씨가 리워드 </string>
+    <string name="login_title3_2">됩니다</string>
+    <string name="login_kakao">카카오로 시작하기</string>
+    <string name="login_naver">네이버로 시작하기</string>
+    <string name="login_google">구글로 시작하기</string>
+    <string name="email">이메일</string>
+    <string name="login_email">이메일로 시작하기</string>
+    <string name="login_guest">게스트로 시작하기&gt;</string>
+    <string name="login_term_desc">SNS 계정으로 로그인하면 당사의 서비스 약관에 동의하고\n개인정보 처리 방침을 읽었음을 간주하는 것입니다.</string>
+    <string name="id_input_hint">이메일을 입력하세요</string>
+    <string name="pw">비밀번호</string>
+    <string name="pw_confirm">비밀번호 확인</string>
+    <string name="pw_input_hint">영문, 숫자 조합 8~32자</string>
+    <string name="login">로그인</string>
+    <string name="go_login">로그인하기</string>
+    <string name="logout">로그아웃</string>
+    <string name="signup">회원가입</string>
+    <string name="new_signup">신규 회원가입</string>
+    <string name="update">업데이트</string>
+    <string name="app_update_message">앱 업데이트가 완료되었습니다.</string>
+    <string name="about_us">회사소개</string>
+    <string name="privacy">개인정보처리방침</string>
+    <string name="terms_of_location">위치기반서비스이용약관</string>
+    <string name="terms">이용약관</string>
+    <string name="business_information">사업자정보확인</string>
+    <string name="search_id">아이디 찾기</string>
+    <string name="search_pw">비밀번호 찾기</string>
+    <string name="wrong_id">아이디가 다릅니다. 확인 후 다시 시도해주세요.</string>
+    <string name="wrong_pw">비밀번호 다릅니다. 확인 후 다시 시도해주세요.</string>
+    <string name="save_email">이메일 저장</string>
+    <string name="prev_return">&lt;첫 화면으로 돌아가기</string>
+    <string name="next">다음</string>
+    <string name="prev">이전</string>
+    <string name="input_user_info">회원정보를\n입력해주세요.</string>
+    <string name="name">이름</string>
+    <string name="sir"> 님</string>
+    <string name="name_input_hint">이름을 입력해 주세요</string>
+    <string name="pno_input_hint">-없이 번호 입력</string>
+    <string name="phone_num">휴대폰 번호</string>
+    <string name="name_empty_error">이름을 입력해주세요</string>
+    <string name="pno_empty_error">휴대폰 번호를 입력해주세요</string>
+    <string name="find_id_error">입력하신 정보로 아이디를 찾을 수 없습니다.</string>
+    <string name="find_id_complete">입력하신 정보로\n아이디를 찾았어요.</string>
+    <string name="id_email">아이디(이메일)</string>
+    <string name="find_id_complete_desc">개인정보는 일부 가려진 채 표시됩니다.</string>
+    <string name="find_pw_desc">가입한 메일로\n인증코드가 발송 됩니다.</string>
+    <string name="sign_email">가입한 이메일</string>
+    <string name="send_auth_code">인증코드 발송</string>
+    <string name="find_code_desc">메일에서 인증 코드를\n확인해 주세요.</string>
+    <string name="find_code_desc2">발송된 메일에서 인증 코드를 입력하면\n인증이 진행됩니다.</string>
+    <string name="code_input">코드입력</string>
+    <string name="code_input_hint">코드를 입력해 주세요.</string>
+    <string name="code_hint">코드를 입력해 주세요.</string>
+    <string name="cert_complete">인증완료</string>
+    <string name="cert_success">인증 완료되었습니다.</string>
+    <string name="reset_pw_desc">비밀번호를\n재설정해 주세요.</string>
+    <string name="new_password">새 비밀번호</string>
+    <string name="new_password_hint">영문 및 숫자 포함하여 입력해 주세요.</string>
+    <string name="new_password_confirm">새 비밀번호 확인</string>
+    <string name="new_password_confirm_hint">비밀번호를 재입력해 주세요</string>
+    <string name="not_same_pw">입력하신 비밀번호가 동일하지 않습니다.</string>
+    <string name="new_pw_complete_desc">비밀번호 설정을\n완료했어요.</string>
+    <string name="new_pw_complete_desc2">새롭게 설정한 비밀번호로\n로그인이 필요합니다.</string>
+    <string name="move_login">로그인하러 가기&gt;</string>
+    <string name="email_input_error">영문,숫자,빼기(-),밑줄(_),마침표(.)만 사용할 수 있어요.(단, 특수기호는 처음과 끝에 또는 연속으로 사용 불가)</string>
+    <string name="pw_input_error">영문, 숫자 조합 8~32자로 입력해 주세요.</string>
+    <string name="pw_input_confirm_error">비밀번호가 일치하지 않아요.</string>
+    <string name="recommend_input">추천인 코드(선택)</string>
+    <string name="recommend_input_hint">추천인 코드를 입력해 주세요(선택)</string>
+    <string name="recommend_input2">추천인 코드</string>
+    <string name="recommend_input_hint2">추천인 코드를 입력해 주세요</string>
+    <string name="recommend_button">포인트 받기</string>
+    <string name="certified">본인인증</string>
+    <string name="phone_certified">본인인증하기&gt;</string>
+    <string name="phone_certified2">본인인증하기</string>
+    <string name="phone_certified_completed">본인인증완료</string>
+    <string name="certified_msg">해당 서비스 이용시 본인인증을 필수로 받으셔야 합니다.</string>
+    <string name="all_agree">모두 동의</string>
+    <string name="all_agree_add">(선택 항목 포함)</string>
+    <string name="signup_agree_1">(필수)만 14세 이상입니다.</string>
+    <string name="signup_agree_2">(필수)이용약관 동의</string>
+    <string name="signup_agree_3">(필수)개인정보처리방침동의</string>
+    <string name="signup_agree_4">(선택)SMS 광고 및 마케팅 이용 동의</string>
+    <string name="signup_agree_5">(선택)이메일 광고 및 마케팅 이용 동의</string>
+    <string name="see">보기</string>
+    <string name="signup_fail">인증을 완료할 수 없어요.</string>
+    <string name="signup_fail_desc">다른 계정에서 인증한 휴대폰 번호입니다.\n동일한 휴대폰 번호로는 인증이 불가합니다.</string>
+    <string name="signup_complete">환영해요</string>
+    <string name="signup_complete_desc">오늘의 날씨로\n포인트를 받아보세요!</string>
+    <string name="signup_start">시작하기&gt;</string>
+    <string name="npay_shop">N페이샵</string>
+    <string name="coupon_shop">쿠폰샵</string>
+    <string name="modify_info">정보수정</string>
+    <string name="more_see2">더보기</string>
+    <string name="more_see">더보기 &gt;</string>
+    <string name="menu">메뉴</string>
+    <string name="withdraw">탈퇴하기</string>
+    <string name="withdraw_desc">마지막으로 확인해 주세요!</string>
+    <string name="withdraw_info1">회원탈퇴 하시면 포인트, 쿠폰이 소멸되고 복구가 불가능합니다.</string>
+    <string name="withdraw_info2">재가입후 본인인증은 30일 이후부터 가능하며, 재가입시 기존 정보는 복구되지 않습니다.</string>
+    <string name="withdraw_agree">탈퇴 시 주의사항에 동의합니다.</string>
+    <string name="withdraw_user">회원탈퇴 &gt;</string>
+    <string name="logout_msg">정말 로그아웃하시겠어요?</string>
+    <string name="logout_desc">로그아웃 후 게스트로 적립된 포인트는 신규 회원 가입시에만 보장됩니다.</string>
+    <string name="invate">친구초대</string>
+    <string name="invate_code_copy">초대코드 복사하기</string>
+    <string name="invate_friend">친구 초대하기&gt;</string>
+    <string name="invate_input_friend_code">친구 코드입력 &gt;</string>
+    <string name="invate_completed">참여 완료</string>
+    <string name="invate_desc1">돈씨를 친구에게 알려주세요!\n지금 친구를 초대하면,</string>
+    <string name="invate_desc2">내가 받는 혜택</string>
+    <string name="invate_desc3">초대한 당신</string>
+    <string name="invate_desc4">1000포인트 보너스!</string>
+    <string name="invate_desc5">친구가 받는 혜택</string>
+    <string name="invate_desc6">초대받은 친구</string>
+    <string name="invate_desc7">1000포인트 웰컴기프트!</string>
+    <string name="invate_info_title1">이용 안내 사항</string>
+    <string name="invate_info_desc1">친구에게 초대 링크를 공유합니다.</string>
+    <string name="invate_info_desc2">초대를 통해 친구가 신규 회원가입 시 추천코드를 입력합니다.</string>
+    <string name="invate_info_desc3">나와 친구 모두에게 1,000캐시가 적립됩니다.</string>
+    <string name="invate_info_title2">추가 안내</string>
+    <string name="invate_info_desc4">친구가 신규가입자인 경우에만 캐시가 지급이 됩니다.</string>
+    <string name="invate_info_desc5">캐시 적립은 최대 20명까지 가능합니다.</string>
+    <string name="invate_info_desc6">부적절한 방법으로 포인트를 적립한 회원은 캐시 적립이 취소됩니다.</string>
+    <string name="invate_dialog_verification_message">본인 인증 후 친구 코드 입력이 가능합니다.</string>
+    <string name="invate_dialog_verification_button">본인 인증 하기</string>
+    <string name="invate_dialog_input_code">친구 코드를 입력해주세요.</string>
+    <string name="invate_dialog_hint">친구 코드 입력</string>
+    <string name="my_point">나의 포인트</string>
+    <string name="usage_detail">이용내역</string>
+    <string name="max_day">(최대 10일)</string>
+    <string name="all">전체</string>
+    <string name="accumulate">적립</string>
+    <string name="use">사용</string>
+    <string name="use_list_empty">이용 내역이 없어요</string>
+    <string name="use_point">- %sP</string>
+    <string name="degrees">˚</string>
+    <string name="percent">%</string>
+    <string name="than_yesterday">어제보다</string>
+    <string name="same_yesterday">어제와 같음</string>
+    <string name="high">높음</string>
+    <string name="low">낮음</string>
+    <string name="degrees_han">도</string>
+    <string name="hour">시</string>
+    <string name="cur_pos">현재 위치</string>
+    <string name="success_write">등록되었습니다.</string>
+    <string name="invite_success">친구 코드 입력하여 포인트를 획득하였습니다.</string>
+    <string name="invite_fail">잘못된 추천인 코드입니다.</string>
+    <string name="my_total_point_title">총 포인트</string>
+    <string name="my_enable_point_title">사용 가능 포인트</string>
+
+    <!-- [LockScreen] -->
+    <string name="than_yesterday_more">전일보다 %.1f도 %s</string>
+    <string name="than_yesterday_more2">어제보다 %.1f° %s</string>
+    <string name="than_yesterday_more3">어제보다 %d° %s</string>
+    <string name="than_yesterday_same">전일과 같아요</string>
+    <string name="than_yesterday_same2">어제와 같음</string>
+    <string name="high_arrow">↑</string>
+    <string name="low_arrow">↓</string>
+    <string name="min_and_max_temp">%s/%s</string>
+
+    <string name="temp_high">높아요</string>
+    <string name="temp_low">낮아요</string>
+    <string name="fine_dust">미세먼지</string>
+    <string name="ultra_dust">초미세먼지</string>
+    <string name="hourly_weather">시간별 날씨</string>
+    <string name="weekly_weather">주간 날씨</string>
+    <string name="mon">월요일</string>
+    <string name="tue">화요일</string>
+    <string name="wed">수요일</string>
+    <string name="thu">목요일</string>
+    <string name="fri">금요일</string>
+    <string name="sat">토요일</string>
+    <string name="sun">일요일</string>
+    <string name="news">뉴스</string>
+    <string name="news_warning">특보</string>
+    <string name="news_notice">공지</string>
+
+    <!-- [스토어 - 메인] -->
+    <string name="store_enable_point_title">사용 가능 포인트</string>
+
+    <!-- [스토어 - 상품상세] -->
+    <string name="store_search_hint">검색어를 입력하세요</string>
+    <string name="store_detail">상품상세</string>
+    <string name="own_point">보유 포인트</string>
+    <string name="due_date">유효기간</string>
+    <string name="due_date_value">%s일</string>
+    <string name="product_description">상품설명</string>
+    <string name="product_precautions">유의사항</string>
+    <string name="product_purchase_confirm_dialog_content">쿠폰을 구매하시겠습니까?</string>
+
+    <!-- [스토어 - 쿠폰함] -->
+    <string name="my_coupon_box">쿠폰함</string>
+    <string name="my_coupon_box_notice">사용 완료 쿠폰은 1년 후 자동 삭제 됩니다.</string>
+    <string name="coupon_list_empty">쿠폰이 없습니다.</string>
+    <string name="coupon_date_renew">연장</string>
+    <string name="coupon_date_refund">환불</string>
+    <string name="coupon_save">쿠폰저장</string>
+    <string name="coupon_status_use">사용완료</string>
+    <string name="coupon_status_refund">환불완료</string>
+    <string name="coupon_status_expire">기간만료</string>
+    <string name="coupon_renew_confirm_dialog_title">쿠폰 연장</string>
+    <string name="coupon_renew_fail_already_use">이미 사용한 쿠폰으로 연장신청이 불가합니다.\n확인 후 다시 시도해주세요</string>
+    <string name="coupon_renew_fail_expire">유효기간이 만료되어 연장신청이 불가합니다.</string>
+    <string name="coupon_refund_confirm_dialog_title">쿠폰 환불</string>
+    <string name="coupon_refund_confirm_dialog_content">쿠폰을 환불하시면 더 이상 사용하실 수 없습니다.\n그래도 환불하시겠습니까?</string>
+    <string name="coupon_refund_success">쿠폰이 정상적으로 환불되었습니다.</string>
+    <string name="message_coupon_save_success">이미지가 저장되었습니다.</string>
+    <string name="add_point">%sP</string>
+    <string name="total_count">전체 %s건</string>
+    <string name="popup_select_subject">주제선택</string>
+    <string name="purchase1">구매하기</string>
+    <string name="coupon">쿠폰</string>
+    <string name="message_non_login_user">회원가입 후 이용하실 수 있습니다.</string>
+    <string name="message_on_debug_mode">테스트버전에서는 이용하실 수 없습니다.</string>
+    <string name="phone_certified_store_dialog">스토어 이용 시 본인인증을\n필수로 받으셔야 합니다.</string>
+    <string name="phone_certified_url">https://www.popupcash.co.kr/phone/verifyView</string>
+    <string name="network_error_message_1">인터넷 접속이 원활하지 않습니다.</string>
+    <string name="not_connect_error">서버와 연결에 실패하였습니다. 나중에 다시 이용하시기 바랍니다.</string>
+    <string name="message_image_save_fail">이미지 저장을 실패하였습니다.</string>
+    <string name="invite_msg5">초대 메시지 보내기</string>
+    <string name="share_kakaotalk">카카오톡</string>
+    <string name="share_sms">문자메시지</string>
+    <string name="invite_code_copy">코드 복사</string>
+    <string name="clipboard_msg">클립보드에 링크가 복사되었습니다.</string>
+    <string name="sns_not_installed">연결할 수 있는 앱이 없습니다.\n문자 메시지로 초대해주세요.</string>
+    <string name="sns_not_installed_2">연결할 수 있는 앱이 없습니다.\n문자 메시지로 공유해주세요.</string>
+    <string name="login_again">다시 로그인 해주세요.</string>
+
+    <string name="setting_app">앱 설정</string>
+    <string name="setting_lock">잠금화면 설정</string>
+    <string name="setting_push">알림 설정</string>
+    <string name="setting_sunflower">소리 및 진동 설정</string>
+    <string name="app_info">앱 정보</string>
+    <string name="notice">공지사항</string>
+    <string name="qa">문의하기</string>
+    <string name="qa_confirm">문의내역확인</string>
+    <string name="faq">FAQ</string>
+    <string name="version_info">버전 정보</string>
+    <string name="gps_agree">위치기반 서비스 이용약관 동의</string>
+    <string name="agree">위치허용 &gt;</string>
+    <string name="dust">미세먼지</string>
+    <string name="notice_title">[공지]</string>
+    <string name="qa_list_empty">문의내역이 없습니다.</string>
+    <string name="qa_title_hint">제목을 입력해 주세요.</string>
+    <string name="qa_content_hint">문의 내용을 입력해 주세요.</string>
+    <string name="qa_file_add">+ 파일 첨부</string>
+    <string name="qa_file_caution">-JPG,PNG만 업로드 가능하며 1개,1MB까지 등록 가능합니다.</string>
+    <string name="qa_terms_introduce">문의하신 내용에 대한 원인파악 및 원활한 상담을 위하여 계정정보와 단말기정보를 수집합니다.\n수집된 개인정보는 개인정보처리방침에 의해 처리됩니다.</string>
+    <string name="qa_register">제출하기</string>
+    <string name="qa_message_file_reselect">파일을 다시 선택해주세요.</string>
+    <string name="qa_message_file_size_check">첨부파일 용량은 1MB 이하입니다.</string>
+    <string name="qa_message_file_type_check">첨부파일 형식을 확인해주세요.</string>
+    <string name="faq_menu_all">전체</string>
+    <string name="faq_menu_save">적립</string>
+    <string name="faq_menu_withdraw">출금</string>
+    <string name="faq_menu_coupon">쿠폰</string>
+    <string name="faq_menu_other">기타</string>
+
+    <string name="feel">체감</string>
+    <string name="humidity">습도</string>
+    <string name="humidity_percentage">습도 %d%%</string>
+    <string name="more_whether">날씨 상세 더보기</string>
+    <string name="quiz">퀴즈</string>
+    <string name="roulette">룰렛</string>
+    <string name="add_accumulate">추가적립</string>
+    <string name="draw">뽑기</string>
+    <string name="sadari">사다리</string>
+    <!--카카오 로그인-->
+    <string name="warning_kakao_not_login">카카오톡에 로그인 후 이용해주세요.</string>
+
+    <string name="popup_point_title">포인트 지급 정책 안내</string>
+    <string name="popup_point_sub_title1">포인트 지급 조건</string>
+    <string name="popup_point_sub_title2">포인트 지급 시간</string>
+    <string name="popup_point_sub_title3">유의사항</string>
+    <string name="popup_point_sub_title4">친구초대 포인트 사용 정책</string>
+    <string name="popup_point_desc1">해가 뜬 날씨에 10P 지급</string>
+    <string name="popup_point_desc2">맑음, 구름조금, 구름많음, 갬</string>
+    <string name="popup_point_desc3">07 시 ~ 18 시 매시간 정각</string>
+    <string name="popup_point_desc4">07시부터 18시까지 최대 120p 적립 가능</string>
+    <string name="popup_point_desc5">반드시 잠금화면 설정을 켜주셔야 포인트\n가 지급됩니다.</string>
+    <string name="popup_point_desc6">흐림, 비, 눈 등 해가 뜨지 않은 날씨이거나\n18시 이후 시간에는 포인트가 지급되지 않\n습니다.</string>
+    <string name="popup_point_desc7">포인트 적립 7일 이후부터 사용 가능</string>
+    <string name="popup_point_desc8">1월 1일에 포인트 적립 시\n1월 8일 00시부터 사용 가능</string>
+
+    <string name="popup_overlay_title1">다른 앱 위에 표시를 켜야 </string>
+    <string name="popup_overlay_title2"> 날씨를 쉽게 확인하고 날씨에 따라 캐시를 받을 수 있습니다.</string>
+    <string name="popup_overlay_title3">(필수)</string>
+
+    <string name="popup_policy_point_title">포인트 사용 정책 안내</string>
+    <string name="popup_policy_point_des">적립 후 7일이 지난 포인트만\n사용 가능합니다</string>
+    <string name="popup_available_point_title">사용 가능 포인트</string>
+    <string name="popup_available_point_des">친구 초대 포인트는 적립 7일\n이후부터 사용 가능합니다.</string>
+
+    <string name="pomission_title">미션</string>
+    <string name="dialog_progress_default_message">미션이 진행중 입니다.</string>
+    <string name="toast_message_ended_mission_1">이미 종료된 미션 입니다.\n참여 가능한 미션이 있는지 확인 중 입니다.</string>
+    <string name="toast_message_ended_mission_2">현재 참여 가능한 미션이 없습니다.</string>
+    <string name="toast_message_back_pressed">뒤로가기를 한번 더 누르면 참여중인 미션을 중단합니다.</string>
+
+    <string name="guest">게스트</string>
+    <string name="user_type_guest">비회원</string>
+    <string name="toast_message_coming_soon">아직 준비되어 있지 않습니다. 조금만 기다려 주세요.</string>
+
+    <string name="no_point_message">받을 포인트가 없어요 😥</string>
+    <string name="toast_message_see_you_tomorrow">내일 다시 만나요 😪</string>
+
+    <string name="network_connection_check">네트워크 연결을 확인해주세요</string>
+
+    <string name="popup_confirm">동의</string>
+    <string name="popup_reject">미동의</string>
+    <string name="popup_background_permission_title">백그라운드 위치 정보\n항상 허용 권한 안내 (선택)</string>
+    <string name="popup_background_permission_content">백그라운드 위치 정보 항상 허용 권한을 사용\n하려고 합니다. 이 기능을 활성화 하면 사용자\n위치의 날씨 정보 제공의 목적으로 사용되며,\n거부하면 일부 기능이 제한될 수 있습니다.\n이 기능은 언제든지 설정에서 허용할 수 있습\n니다.</string>
+    <string name="popup_permission_title">돈씨 서비스 이용을 위해 아래\n접근권한의 허용이 필요합니다</string>
+    <string name="popup_permission_content">위 접근권한은 더 나은 서비스를 제공하기 위해 사용됩\n니다. 허용에 동의하지 않으셔도 돈씨를 이용하실 수 있\n으나 일부 서비스의 이용이 제한될 수 있습니다.</string>
+    <string name="popup_permission_location_title">위치</string>
+    <string name="popup_permission_location_content">(선택) 현 위치 날씨 표시, 날씨 안내</string>
+    <string name="popup_permission_phone_title">전화</string>
+    <string name="popup_permission_phone_content">(선택) 휴대폰 단말기 식별에 이용</string>
+    <string name="popup_permission_noti_title">알림</string>
+    <string name="popup_permission_noti_content">(선택) 공지 및 이벤트 알림</string>
+    <string name="popup_battery_title">돈씨 알림사항</string>
+    <string name="popup_battery_content">배터리 최적화 설정 [허용]을 눌러주세요\n허용이 안된 경우 정확한 날씨 정보와\n포인트 적립이 어려울수 있습니다.</string>
+    <string name="popup_ad_push_agree_title">광고성 정보 수신 동의</string>
+    <string name="popup_ad_push_agree_desc">푸시 알림을 통해 회원님께만\n드리는 쿠폰, 적립 혜택 등을\n전송하려고 합니다.\n\n앱 푸시에 수신 동의하시겠습니까?</string>
+
+    <string name="toast_ad_push_agree_confirm">yyyy년 M월 d일 돈씨 마케팅\n정보 수신 알림을 동의하셨습니다.</string>
+    <string name="toast_ad_push_agree_reject">yyyy년 M월 d일 돈씨 마케팅\n정보 수신 알림을 거부하셨습니다.</string>
+
+    <string name="save_game">게임적립</string>
+
+    <string name="news_reward">뉴스 적립</string>
+    <!--
+    <string name="news_point_message_1">초 구경하면 포인트를 받아요</string>
+    <string name="news_point_message_2">스크롤해야 시간이 줄어요</string>
+    <string name="news_point_message_3">미션 보상을 받았어요!</string>
+    -->
+
+    <!--Shop Plus-->
+    <string name="shop_plus">쇼핑적립</string>
+    <string name="shop_plus_affliate_id">donsee</string>
+    <string name="shop_plus_site">donsee</string>
+    <string name="shop_plus_zone_id">shoplus</string>
+
+    <!--라이브 방송-->
+    <string name="live">LIVE</string>
+    <string name="ad">AD</string>
+
+    <string name="popup_notice_left_button_text">하루동안 안보기</string>
+    <string name="popup_notice_right_button_text">자세히보기</string>
+
+    <string name="popup_new_info_title_text">해만 떠도 돈이 된다</string>
+    <string name="popup_new_info_title_text_2">쉽고 놀라운 포인트 적립!</string>
+    <string name="popup_new_info_content_text">07시부터 18시까지\n정각마다 포인트가 지급되요</string>
+    <string name="popup_new_info_content_text_2">적용 날씨 : 맑음, 구름조금, 구름많음, 갬</string>
+    <string name="popup_new_info_left_button_text">다시 보지 않기</string>
+    <string name="popup_new_info_right_button_text">오늘 하루 안 보기</string>
+
+    <string name="sunrise">일출</string>
+    <string name="sunset">일몰</string>
+    <string name="progressbar_sunrise_sunset_title1">포인트가 적립되고 있어요</string>
+    <string name="progressbar_sunrise_sunset_title2">해가 보이지 않아 적립이 멈췄어요.</string>
+    <string name="progressbar_sunrise_sunset_title3">내일의 포인트가 준비중이에요</string>
+
+    <string name="popup_update_check_title">돈씨 업데이트</string>
+    <string name="popup_update_check_content1">업데이트를 해야 서비스 이용이 가능\n합니다. 앱 업데이트를 위해 스토어로\n이동하시겠습니까?</string>
+    <string name="popup_update_check_content2">최신 버전 사용을 권장합니다.\n앱 업데이트를 위해 스토어로 이동하시겠\n습니까?</string>
+    <string name="popup_update_check_go_store">스토어 이동</string>
+    <string name="text_go_store">스토어 바로가기 &gt;</string>
+    <string name="popup_update_check_next_time">다음에 하기</string>
+    <string name="popup_update_check_app_finish">앱 종료</string>
+
+    <string name="popup_location_check_title">위치 설정</string>
+    <string name="popup_location_check_content">위치 설정이 꺼져있습니다.\n위치 설정을 켜야 현 위치의 날씨 정보를\n제공할 수 있습니다.\n위치 설정을 켜주시기 바랍니다.</string>
+    <string name="toast_location_check_content">현 위치의 날씨 정보 제공을 위해서는 위치 설정을 꼭 켜주시기 바랍니다.</string>
+
+    <string name="dialog_message_request_nas_permission">나스 미디어를 이용하기 위해서는 \'GET_ACCOUNTS\' 권한을 필요로 합니다. 설정에서 연락처 액세스 권한을 허용해주세요.</string>
+
+    <string name="text_policy_point_info">* 적립 후 1년이 지난 포인트는 자동으로 소멸됩니다.</string>
+
+    <string name="popup_stop_mission_text">지금 종료하면\n포인트 적립이 취소됩니다.\n그래도 종료하시겠습니까?</string>
+    <string name="popup_stop_mission_positive_button">네</string>
+    <string name="popup_stop_mission_negative_button">아니오</string>
+
+    <!-- Notification -->
+    <string name="notification_region_message">&lt;b>%s 날씨&lt;/b> %s</string>
+    <string name="notification_weather_message">%s (최저 %s/최고 %s/초미세먼지 %s)</string>
+    <string name="notification_title_type">잠금화면으로 혜택적립 중</string>
+    <string name="notification_content_type">잠금화면 사용하고 혜택받으세요</string>
+
+    <!-- Setting > Sunflower-->
+    <string name="setting_sunflower_title">해바라기 포인트</string>
+    <string name="setting_sunflower_desc">해바라기 포인트 적립 시\n소리 및 진동 상태를 설정하세요.</string>
+    <string name="setting_sunflower_sound">적립 시 소리</string>
+    <string name="setting_sunflower_vibration">적립 시 진동</string>
+
+    <string name="format_calendar_header">yyyy년 M월</string>
+
+    <string name="agreed">동의함</string>
+    <string name="rejected">거부함</string>
+    <string name="service_push">서비스 알림</string>
+    <string name="marketing_push">마케팅 알림</string>
+    <string name="marketing_push_agree">마케팅 정보 수신 동의</string>
+    <string name="night_push">야간(21:00~08:00) 수신 허용</string>
+    <string name="push_info_title">광고성 정보 PUSH 수신 동의</string>
+    <string name="push_info_desc">등록하신 휴대폰번호, 이메일 정보와 APP 알림 받기\n설정으로 친구초대, 포인트 적립 안내 및 이벤트 소식\n등을 받으실 수 있습니다.</string>
+    <string name="push_info_sub_title_1">항목</string>
+    <string name="push_info_sub_title_2">이용목적</string>
+    <string name="push_info_sub_title_3">보유기간</string>
+    <string name="push_info_sub_desc_1">모바일앱 알림 동의</string>
+    <string name="push_info_sub_desc_2">새로운 서비스 및 혜택이나 이벤트 정보 동의 안내</string>
+    <string name="push_info_sub_desc_3">별도 동의 철회시까지 또는 약관 철회 후 1주일까지</string>
+    <string name="checkbox_push_agree">동의하고 앱 PUSH를 수신합니다.</string>
+
+    <string name="toast_bottom_banner_point_message">%dP가 적립되었습니다</string>
+    <string name="toast_stay_time_message">페이지에 5초 이상 접속해주세요</string>
+
+    <string name="toast_usage_stats_permission">광고 적립을 위해 권한을 꼭 허용해주세요.</string>
+    <string name="popup_usage_stats_permission">광고 참여 적립을 위해 사용정보 접근 권한을 허용해주세요.(선택)</string>
+    <string name="popup_usage_stats_permission_negative_button">닫기</string>
+
+    <!-- point policy -->
+    <string name="lock_point_policy_info">"https://donsee.co.kr/resources/policy/lock_point_policy.html"</string>
+    <string name="main_point_policy_info">"https://donsee.co.kr/resources/policy/main_point_policy.html"</string>
+
+    <!-- web view -->
+    <string name="web_view_downloading">파일 다운로드 중…</string>
+    <string name="web_view_download_start">파일 다운로드 시작</string>
+
+    <!-- pomission zone -->
+    <string name="pomission_zone_title">포미션 충전소</string>"
+
+    <string name="permissions_need_storage">저장소 권한이 필요합니다</string>
+</resources>

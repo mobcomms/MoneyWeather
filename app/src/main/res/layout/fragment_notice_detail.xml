@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_side_margin"
+                android:layout_marginTop="@dimen/default_side_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:maxLines="1"
+                android:text="@string/notice_title"
+                android:textAlignment="textStart"
+                android:textColor="@color/default_main_color"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/default_side_margin"
+                android:layout_marginRight="@dimen/default_side_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:maxLines="1"
+                android:textAlignment="textStart"
+                android:textColor="@color/grey_a5"
+                android:textSize="13sp"
+                tools:text="2024.09.20" />
+
+            <TextView
+                android:id="@+id/tvSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginLeft="@dimen/default_side_margin"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="@dimen/default_side_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:maxLines="2"
+                android:textAlignment="textStart"
+                android:textColor="@color/grey_222"
+                android:textSize="18sp"
+                tools:text="공지 제목" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvSubject"
+                android:layout_margin="@dimen/default_side_margin"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autoLink="web"
+                        android:background="@color/screen_bg"
+                        android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                        android:linksClickable="true"
+                        android:padding="18dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grey_555"
+                        android:textSize="15sp"
+                        tools:text="공지 본문" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

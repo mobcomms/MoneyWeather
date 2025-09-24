@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/default_actionbar_height"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/ivActionBarLeftButton"
+        android:layout_width="@dimen/default_actionbar_btn_size"
+        android:layout_height="@dimen/default_actionbar_btn_size"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/btn_back" />
+
+    <TextView
+        android:id="@+id/btnPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="@string/prev" />
+
+    <TextView
+        android:id="@+id/tvActionBarName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/grey_222"
+        android:textSize="@dimen/default_text_size_xxxxl"
+        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/tvActionBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/grey_222"
+        android:textSize="@dimen/default_text_size_xxxxl"
+        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+        android:visibility="gone"
+        tools:text="Title" />
+
+    <ImageView
+        android:id="@+id/ivActionBarRightButton"
+        android:layout_width="@dimen/default_actionbar_btn_size"
+        android:layout_height="@dimen/default_actionbar_btn_size"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/ic_setting"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="@string/next" />
+
+
+</RelativeLayout>
+
+</layout>

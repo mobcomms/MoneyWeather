@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="64dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iActionBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+                <TextView
+                    android:id="@+id/desc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="@dimen/default_side_margin"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/login_title1"
+                    android:textColor="@color/grey_555"
+                    android:textSize="14dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/desc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:includeFontPadding="false"
+                    android:text="@string/input_user_info"
+                    android:textColor="@color/grey_222"
+                    android:textSize="24dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/desc1" />
+
+                <ImageView
+                    android:id="@+id/imgTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_large"
+                    android:scaleType="center"
+                    android:src="@drawable/img_join_top"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/desc2" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/email"
+                    android:textColor="@color/grey_222"
+                    android:textSize="14dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/desc2" />
+
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/space_medium"
+                    app:hint="@string/id_input_hint"
+                    app:imeOptions="actionNext"
+                    app:inputType="text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email" />
+
+                <TextView
+                    android:id="@+id/email_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/email_input_error"
+                    android:textColor="@color/main_red"
+                    android:textSize="13dp"
+                    android:visibility="gone"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+
+                <TextView
+                    android:id="@+id/editPasswordTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/pw"
+                    android:textColor="@color/grey_222"
+                    android:textSize="14dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_error" />
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:hint="@string/new_password_hint"
+                    app:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/editPasswordTitle" />
+
+
+                <TextView
+                    android:id="@+id/pw_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/pw_input_error"
+                    android:textColor="@color/main_red"
+                    android:textSize="13dp"
+                    android:visibility="gone"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+
+                <TextView
+                    android:id="@+id/editPasswordConfirmTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/pw_confirm"
+                    android:textColor="@color/grey_222"
+                    android:textSize="14dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pw_error" />
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/editPasswordConfirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:hint="@string/new_password_confirm_hint"
+                    app:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/editPasswordConfirmTitle" />
+
+
+                <TextView
+                    android:id="@+id/pw_confirm_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/pw_input_confirm_error"
+                    android:textColor="@color/main_red"
+                    android:textSize="13dp"
+                    android:visibility="gone"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editPasswordConfirm" />
+
+                <TextView
+                    android:id="@+id/recommend_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/recommend_input"
+                    android:textColor="@color/grey_222"
+                    android:textSize="14dp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pw_confirm_error" />
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/recommend_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:hint="@string/recommend_input_hint"
+                    app:inputType="text"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/recommend_title" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCert"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="84dp"
+                    android:background="@drawable/button_certification"
+                    android:enabled="true"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:text="@string/phone_certified"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/recommend_input" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="84dp"
+                    android:background="@drawable/round_cert_complete_bg"
+                    android:enabled="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/recommend_input">
+
+                    <TextView
+                        android:id="@+id/tvCert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:drawableRight="@drawable/checkbox2_on"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:text="@string/phone_certified_completed"
+                        android:textColor="@color/default_main_color"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:background="@drawable/selector_find_button"
+            android:enabled="false"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

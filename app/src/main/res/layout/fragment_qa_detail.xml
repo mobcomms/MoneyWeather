@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.QaDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_margin="@dimen/default_side_margin"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textColor="@{vm.resultData.isReplied() ? @color/white : @color/default_main_color}"
+            android:background="@{vm.resultData.isReplied() ? @drawable/round_blue : @drawable/button_certification}"
+            android:text="@{vm.resultData.isReplied() ? @string/complete : @string/receipt}"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iActionBar"
+            tools:text="접수"
+            />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginRight="@dimen/default_side_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textColor="@color/grey_a5"
+            app:convertDate="@{vm.resultData.data.createdAt}"
+            android:textSize="13dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle"
+            tools:text="20204.07.03"/>
+
+        <TextView
+            android:id="@+id/tvSubject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textColor="@color/grey_222"
+            android:textSize="18dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@{vm.resultData.data.title}"
+            app:layout_constraintRight_toRightOf="@+id/tvDate"
+            app:layout_constraintLeft_toLeftOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="문의제목"/>
+
+        <TextView
+            android:id="@+id/tvQ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textColor="@color/grey_222"
+            android:textSize="18dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Q."
+            app:layout_constraintRight_toRightOf="@+id/tvDate"
+            app:layout_constraintLeft_toLeftOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubject"
+           />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="8dp"
+            android:padding="18dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textColor="@color/grey_555"
+            android:textSize="15dp"
+            android:minHeight="160dp"
+            app:toHtml="@{vm.resultData.data.content}"
+            app:layout_constraintRight_toRightOf="@+id/tvDate"
+            app:layout_constraintLeft_toLeftOf="@+id/tvQ"
+            app:layout_constraintTop_toBottomOf="@+id/tvQ"
+            tools:text="문의 내용"
+            />
+
+        <TextView
+            android:id="@+id/tvFileLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textColor="@color/grey_74"
+            android:textSize="12dp"
+            android:visibility="gone"
+            android:drawableLeft="@drawable/btn_fileupload"
+            app:layout_constraintRight_toRightOf="@+id/tvDate"
+            app:layout_constraintLeft_toLeftOf="@+id/tvQ"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+            tools:text="screenshot_12312313.png"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/default_side_margin"
+            android:padding="18dp"
+            android:visibility="@{vm.resultData.isReplied() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFileLink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/screen_bg"
+            >
+
+            <TextView
+                android:id="@+id/tvA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:textColor="@color/default_main_color"
+                android:textSize="15dp"
+                android:text="A."
+                />
+
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="textStart"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:textColor="@color/grey_555"
+                android:textSize="15dp"
+                app:toHtml="@{vm.resultData.data.reply}"
+                tools:text="답변 본문"/>
+        </LinearLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

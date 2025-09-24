@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.moneyweather.util.CommonUtils" />
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.ShopViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/layTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@color/default_main_color"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="4dp"
+            app:tabMode="auto"
+            app:tabRippleColor="@color/transparent"
+            app:tabSelectedTextColor="@color/default_main_color"
+            app:tabTextColor="@color/black">
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <View
+            android:id="@+id/lineTab"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/greyish"
+            app:layout_constraintBottom_toBottomOf="@+id/layTab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/btnSortType"
+            style="?selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_roundrect_outline_whitetthree_10"
+            android:gravity="center_vertical"
+            android:minWidth="88dp"
+            android:orientation="horizontal"
+            android:minHeight="@dimen/min_height_edittext"
+            android:paddingStart="@dimen/space_xsmall"
+            android:paddingTop="@dimen/space_xxsmall"
+            android:paddingEnd="@dimen/space_xsmall"
+            android:paddingBottom="@dimen/space_xxsmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineTab">
+
+            <TextView
+                android:id="@+id/editAffiliate"
+                style="@style/FontStyle.GreyishBrown.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="교환처(전체)" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_xsmall"
+                android:src="@drawable/ico_alert_dropdown" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_small_2"
+            android:layout_marginEnd="@dimen/space_medium"
+            android:background="@drawable/shape_roundrect_outline_whitetthree_10"
+            android:drawableStart="@drawable/search_ico"
+            android:drawablePadding="@dimen/space_xxsmall"
+            android:gravity="center_vertical"
+            android:hint="@string/store_search_hint"
+            android:minHeight="@dimen/min_height_edittext"
+            android:paddingStart="@dimen/space_xsmall"
+            android:paddingTop="@dimen/space_xxsmall"
+            android:paddingEnd="@dimen/space_xsmall"
+            android:paddingBottom="@dimen/space_xxsmall"
+            android:textColorHint="@color/pinkish_grey"
+            android:textSize="@dimen/font_medium"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnSortType"
+            app:layout_constraintTop_toTopOf="@+id/btnSortType" />
+
+        <View
+            android:id="@+id/lineSearchArea"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/space_xsmall"
+            android:background="@color/greyish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/txtProductCount"
+            style="@style/FontStyle.Black.Small"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="@dimen/space_xsmall"
+            android:text="@{String.format(@string/total_count,CommonUtils.getCommaNumeric(vm.resultProductCount))}"
+            tools:text="전체 428건"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topTab" />
+
+        <View
+            android:id="@+id/lineProductCount"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/space_xsmall"
+            android:background="@color/greyish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtProductCount" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineProductCount"
+            tools:listitem="@layout/viewholder_product" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtTest"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:background="#99000000"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingStart="@dimen/space_huge"-->
+<!--            android:paddingEnd="@dimen/space_huge"-->
+<!--            android:text="4월 16일 오픈 예정"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="35dp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/lineToolbar" />-->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

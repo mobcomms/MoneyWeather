@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.CouponDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <View
+            android:id="@+id/lineToolbar"
+            style="@style/HorizontalLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iActionBar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layRefresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCouponSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineToolbar">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/layScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="96dp"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        android:layout_marginEnd="96dp"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/img_store_sample" />
+
+                    <TextView
+                        android:id="@+id/txtPlaceForSale"
+                        style="@style/FontStyle.PinkishGrey.Small"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        android:includeFontPadding="true"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imgProduct"
+                        tools:text="스타벅스" />
+
+                    <TextView
+                        android:id="@+id/txtProductName"
+                        style="@style/FontStyle.Black.Large"
+                        android:layout_marginTop="@dimen/space_tiny"
+                        android:includeFontPadding="true"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtPlaceForSale"
+                        tools:text="카페아메리카노 Tall" />
+
+                    <TextView
+                        android:id="@+id/txtProductPrice"
+                        style="@style/FontStyle.Black.Large"
+                        android:layout_marginTop="@dimen/space_tiny"
+                        android:includeFontPadding="true"
+                        android:textColor="@color/default_main_color"
+                        android:textStyle="bold"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProductName"
+                        tools:text="6,250P" />
+
+                    <View
+                        android:id="@+id/lineProduct"
+                        style="@style/HorizontalLine"
+                        android:layout_marginTop="@dimen/space_xxxlarge"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProductPrice" />
+
+                    <TextView
+                        android:id="@+id/txtDueDateLabel"
+                        style="@style/FontStyle.WarmGrey.Medium"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        android:text="@string/due_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineProduct" />
+
+                    <TextView
+                        android:id="@+id/txtDueDate"
+                        style="@style/FontStyle.Black.Medium"
+                        android:layout_marginEnd="@dimen/space_medium"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1.0"
+                        android:shadowDy="1.0"
+                        android:shadowRadius="1.0"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtDueDateLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txtDueDateLabel"
+                        tools:text="90일" />
+
+                    <View
+                        android:id="@+id/lineDueDate"
+                        style="@style/HorizontalLine"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDueDateLabel" />
+
+                    <ImageView
+                        android:id="@+id/imgBarcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_huge"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineDueDate"
+                        tools:background="@color/black"
+                        tools:layout_height="110dp" />
+
+                    <TextView
+                        android:id="@+id/txtBarcode"
+                        style="@style/FontStyle.Black"
+                        android:layout_marginTop="@dimen/space_xxxxsmall"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/space_xxxsmall"
+                        android:paddingEnd="@dimen/space_xxxsmall"
+                        android:textSize="21dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imgBarcode"
+                        tools:text="809452809452" />
+
+                    <View
+                        android:id="@+id/lineCancellation"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/space_xxsmall"
+                        android:background="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtBarcode"
+                        app:layout_constraintEnd_toEndOf="@+id/txtBarcode"
+                        app:layout_constraintStart_toStartOf="@+id/txtBarcode"
+                        app:layout_constraintTop_toTopOf="@+id/txtBarcode" />
+
+                    <Button
+                        android:id="@+id/btnRenew"
+                        style="@style/ButtonStyle"
+                        android:layout_marginTop="@dimen/space_xlarge"
+                        android:background="@drawable/button_store_product"
+                        android:minWidth="@dimen/min_width_small_button"
+                        android:minHeight="@dimen/min_height_small_button"
+                        android:onClick="onClick"
+                        android:text="@string/coupon_date_renew"
+                        android:textColor="@color/selector_blue_to_greyishbrown"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@+id/btnRefund"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtBarcode" />
+
+                    <Button
+                        android:id="@+id/btnRefund"
+                        style="@style/ButtonStyle"
+                        android:layout_marginStart="@dimen/space_xsmall"
+                        android:background="@drawable/button_store_product"
+                        android:minWidth="@dimen/min_width_small_button"
+                        android:minHeight="@dimen/min_height_small_button"
+                        android:onClick="onClick"
+                        android:visibility="gone"
+                        android:text="@string/coupon_date_refund"
+                        android:textColor="@color/selector_blue_to_greyishbrown"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnRenew"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btnRenew"
+                        app:layout_constraintTop_toBottomOf="@+id/imgBarcode"
+                        app:layout_constraintTop_toTopOf="@+id/btnRenew"
+                        tools:enabled="false" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/groupCouponStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="viewBarcodeCover,imgCouponStatus,lineCancellation"
+                        tools:visibility="visible" />
+
+                    <View
+                        android:id="@+id/viewBarcodeCover"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:alpha="0.8"
+                        android:background="@color/white"
+                        android:focusableInTouchMode="false"
+                        app:layout_constraintBottom_toTopOf="@+id/lineButtons"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineDueDate"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/imgCouponStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_large"
+                        android:layout_marginEnd="@dimen/space_huge"
+                        app:layout_constraintEnd_toEndOf="@+id/viewBarcodeCover"
+                        app:layout_constraintTop_toTopOf="@+id/viewBarcodeCover"
+                        tools:src="@drawable/ico_coupon_use" />
+
+                    <View
+                        android:id="@+id/lineButtons"
+                        style="@style/HorizontalLine"
+                        android:layout_marginTop="@dimen/space_huge"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnRenew" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/layTab"
+                        style="@style/TabStyle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineButtons"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabRippleColor="@color/transparent">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/product_description" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/product_precautions" />
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                    <View
+                        android:id="@+id/lineTab"
+                        style="@style/HorizontalLine"
+                        android:layout_marginTop="@dimen/space_xsmall"
+                        app:layout_constraintBottom_toBottomOf="@+id/layTab"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pagerDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineTab"
+                        tools:layout_height="150dp" />
+
+                    <TextView
+                        android:id="@+id/btnTerms"
+                        style="@style/TextButtonStyle"
+                        android:layout_marginTop="@dimen/space_medium"
+                        android:layout_marginBottom="@dimen/space_large"
+                        android:lineSpacingExtra="2dp"
+                        android:onClick="onClick"
+                        android:text="@string/terms"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnBusinessInfo"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pagerDetail" />
+
+                    <TextView
+                        android:id="@+id/btnBusinessInfo"
+                        style="@style/TextButtonStyle"
+                        android:lineSpacingExtra="2dp"
+                        android:onClick="onClick"
+                        android:text="@string/business_information"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnTerms"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btnTerms"
+                        app:layout_constraintTop_toTopOf="@+id/btnTerms" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <Button
+            android:id="@+id/btnCouponSave"
+            style="@style/ButtonStyle.Rect"
+            android:layout_width="0dp"
+            android:onClick="onClick"
+            android:text="@string/coupon_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layRefresh"
+            tools:enabled="false" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layGifticon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imgProductForGifticon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="@dimen/space_huge"
+                    android:layout_marginEnd="96dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/img_store_sample" />
+
+                <TextView
+                    android:id="@+id/txtAffiliateForGifticon"
+                    style="@style/FontStyle.PinkishGrey.Small"
+                    android:layout_marginTop="@dimen/space_xsmall"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgProductForGifticon"
+                    tools:text="스타벅스" />
+
+                <TextView
+                    android:id="@+id/txtProductNameForGifticon"
+                    style="@style/FontStyle.Black.Large"
+                    android:layout_marginTop="@dimen/space_tiny"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:includeFontPadding="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAffiliateForGifticon"
+                    tools:text="카페아메리카노 Tall" />
+
+                <View
+                    android:id="@+id/lineProductForGifticon"
+                    style="@style/HorizontalLine"
+                    android:layout_marginTop="@dimen/space_xxxlarge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductNameForGifticon" />
+
+                <TextView
+                    android:id="@+id/txtDueDateLabelForGifticon"
+                    style="@style/FontStyle.WarmGrey.Medium"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="@dimen/space_xsmall"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:text="@string/due_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineProductForGifticon" />
+
+                <TextView
+                    android:id="@+id/txtDueDateForGifticon"
+                    style="@style/FontStyle.Black.Medium"
+                    android:layout_marginEnd="@dimen/space_medium"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="0.5"
+                    android:shadowDy="0.5"
+                    android:shadowRadius="0.5"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtDueDateLabelForGifticon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtDueDateLabelForGifticon"
+                    tools:text="90일" />
+
+                <View
+                    android:id="@+id/lineDueDateForGifticon"
+                    style="@style/HorizontalLine"
+                    android:layout_marginTop="@dimen/space_xsmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDueDateLabelForGifticon" />
+
+                <ImageView
+                    android:id="@+id/imgBarcodeForGifticon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_huge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineDueDateForGifticon"
+                    tools:background="@color/black"
+                    tools:layout_height="110dp" />
+
+                <TextView
+                    android:id="@+id/txtBarcodeForGifticon"
+                    style="@style/FontStyle.Black"
+                    android:layout_marginTop="@dimen/space_xxxxsmall"
+                    android:layout_marginBottom="@dimen/space_huge"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingStart="@dimen/space_xxxsmall"
+                    android:paddingEnd="@dimen/space_xxxsmall"
+                    android:textSize="21dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBarcodeForGifticon"
+                    tools:text="809452809452" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/HCProgressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineToolbar"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

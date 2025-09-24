@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:paddingTop="50dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_login_coin1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/lyFirstLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="14dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.01"
+                    android:text="@string/login_title1"
+                    android:textColor="@color/greyish_brown"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lySecondLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="19dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lyFirstLine">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.01"
+                    android:text="@string/login_title2"
+                    android:textColor="@color/grey_222"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyThirdLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="19dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lySecondLine">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    changeColor="@{@string/login_title3_1}"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.01"
+                    android:textColor="@color/grey_222"
+                    android:textSize="30dp"
+                    tools:text="날씨가 리워드 됩니다"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivLogo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_login_coin2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lyThirdLine" />
+
+            <!-- 카카오 로그인 버튼 -->
+
+                <TextView
+                    android:id="@+id/btnKakao"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:includeFontPadding="false"
+                    android:text="@string/login_kakao"
+                    android:textColor="@color/black"
+                    android:background="@drawable/round_kakao_bg"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btnNaver"
+                    android:visibility="visible"/>
+
+
+            <!-- 네이버 로그인 버튼 -->
+
+            <TextView
+                android:id="@+id/btnNaver"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:includeFontPadding="false"
+                android:text="@string/login_naver"
+                android:textColor="@color/white"
+                android:background="@drawable/round_naver_bg"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:onClick="@{()->vm.naverLogin()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnGoogle"/>
+
+
+            <!-- 구글 로그인 버튼 -->
+
+
+            <TextView
+                android:id="@+id/btnGoogle"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:includeFontPadding="false"
+                android:text="@string/login_google"
+                android:textColor="@color/white"
+                android:background="@drawable/round_google_bg"
+                android:gravity="center"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnEmail"/>
+
+            <!-- 이메일 로그인 버튼 -->
+
+            <TextView
+                android:id="@+id/btnEmail"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:includeFontPadding="false"
+                android:text="@string/login_email"
+                android:textColor="@color/white"
+                android:background="@drawable/round_email_bg"
+                android:gravity="center"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btnGuest"/>
+
+            <!--게스트 로그인 버튼 -->
+
+            <TextView
+                android:id="@+id/btnGuest"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:includeFontPadding="false"
+                android:text="@string/login_guest"
+                android:textColor="@color/grey_74"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/term_desc" />
+
+            <TextView
+                android:id="@+id/term_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="28dp"
+                android:background="@null"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/login_term_desc"
+                android:textColor="@color/grey_999"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+
+</layout>

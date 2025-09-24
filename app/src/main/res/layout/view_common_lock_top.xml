@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.ThemeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <TextView
+            android:id="@+id/tvUserPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:drawablePadding="2dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:gravity="start"
+            android:onClick="@{()->vm.onClickPoint()}"
+            android:paddingVertical="18dp"
+            android:singleLine="true"
+            android:textColor="@{vm.darkTheme ? @color/white : @color/grey_222}"
+            android:textSize="15dp"
+            app:drawableStartCompat="@drawable/ic_lock_point"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="23,400" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/menu_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tvUserPoint"
+            app:layout_constraintStart_toEndOf="@+id/tvUserPoint"
+            app:layout_constraintTop_toTopOf="@id/tvUserPoint" />
+
+        <ImageView
+            android:id="@+id/btnSetting"
+            android:layout_width="34dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="18dp"
+            android:paddingBottom="18dp"
+            android:src="@drawable/ic_change"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@{vm.darkTheme?@color/white:@color/black}" />
+
+        <ImageView
+            android:id="@+id/btnCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{()->vm.onClickCharge()}"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/lock_btn_charge"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSetting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@{vm.darkTheme?@color/white:@color/black}" />
+
+        <ImageView
+            android:id="@+id/btnGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{()->vm.onClickGame()}"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/lock_btn_game"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnCharge"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@{vm.darkTheme?@color/white:@color/black}" />
+
+        <ImageView
+            android:id="@+id/btnShopPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{()->vm.onClickShopPlus()}"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/lock_btn_shopplus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnGame"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@{vm.darkTheme?@color/white:@color/black}" />
+
+        <ImageView
+            android:id="@+id/iv_pomission_zone_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="@{()->vm.onClickPomissionZone()}"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="18dp"
+            android:src="@drawable/lock_btn_point"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnShopPlus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@{vm.darkTheme?@color/white:@color/black}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="2dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_point"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/iv_pomission_zone_button"
+            app:layout_constraintTop_toTopOf="@id/iv_pomission_zone_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

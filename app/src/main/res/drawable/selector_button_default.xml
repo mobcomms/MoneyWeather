@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@color/disable_btn_color" />
+        </shape>
+    </item>
+    <item>
+        <ripple android:color="@color/ripple_color">
+            <item android:id="@android:id/mask">
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="#ffffff" />
+                </shape>
+            </item>
+            <item android:id="@android:id/background">
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="@color/default_main_color" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+</selector>

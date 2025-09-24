@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:variablePadding="true">
+    <item>
+        <layer-list>
+            <item
+                android:width="24dp"
+                android:height="24dp"
+                android:bottom="3dp"
+                android:end="3dp"
+                android:start="3dp"
+                android:top="3dp">
+                <shape android:shape="oval">
+                    <solid android:color="@color/white" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
+
+

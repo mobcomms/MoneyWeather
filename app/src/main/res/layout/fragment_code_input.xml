@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.CodeInputViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="@dimen/default_side_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:includeFontPadding="false"
+            android:text="@string/find_code_desc"
+            android:textColor="@color/grey_222"
+            android:textSize="24dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@+id/iActionBar"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="@dimen/default_side_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:includeFontPadding="false"
+            android:text="@string/find_code_desc2"
+            android:textColor="@color/grey_74"
+            android:textSize="15dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/codeInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:includeFontPadding="false"
+            android:text="@string/code_input"
+            android:textColor="@color/grey_222"
+            android:textSize="14dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@+id/desc2"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <com.moneyweather.ui.HCEditText
+            android:id="@+id/editCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="@dimen/space_medium"
+            app:hint="@string/code_input_hint"
+            app:inputType="textWebEmailAddress"
+            app:imeOptions="actionNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/codeInput" />
+
+        <TextView
+            android:id="@+id/email_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:includeFontPadding="false"
+            android:textColor="@color/main_red"
+            android:textSize="13dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@+id/editCode"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="인증 완료되었습니다."
+            />
+
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:text="@string/cert_complete"
+            android:textColor="@color/white"
+            android:enabled="false"
+            android:background="@drawable/selector_find_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

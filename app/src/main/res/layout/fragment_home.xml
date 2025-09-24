@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.MainHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iActionBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/layoutUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iconUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/default_user_icon" />
+
+                    <TextView
+                        android:id="@+id/userId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{vm.user.email}"
+                        android:textColor="@color/grey_222"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/iconUser"
+                        app:layout_constraintLeft_toRightOf="@id/iconUser"
+                        app:layout_constraintTop_toTopOf="@id/iconUser"
+                        tools:text="돈씨아이디" />
+
+                    <TextView
+                        android:id="@+id/loginBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:text="@string/go_login"
+                        android:textColor="@color/grey_222"
+                        android:textSize="13sp"
+                        android:background="@drawable/round_login"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/userPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:drawableLeft="@drawable/img_point"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:onClick="@{()->vm.onClickPoint()}"
+                    android:textColor="@color/grey_222"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layoutUser"
+                    app:toPoint="@{vm.userPoint.currentPoint}"
+                    tools:text="1,000P" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weatherLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/round_my_user_bg"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="20dp"
+                    app:layout_constraintLeft_toLeftOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="@id/userPoint"
+                    app:layout_constraintTop_toBottomOf="@id/layoutUser">
+
+                    <ImageView
+                        android:id="@+id/whetherStatus"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:adjustViewBounds="true"
+                        android:src="@{vm.currentWeather.weatherImage()}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/icon_weather_1" />
+
+                    <TextView
+                        android:id="@+id/curTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white"
+                        android:textSize="35dp"
+                        app:convertFloatTemp="@{vm.currentWeather.temp}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/whetherStatus"
+                        tools:text="23.2°" />
+
+                    <TextView
+                        android:id="@+id/userLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:drawableLeft="@drawable/img_location"
+                        android:drawablePadding="3dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{vm.region.lastDepth}"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/curTemp"
+                        tools:text="구로동" />
+
+                    <ImageView
+                        android:id="@+id/info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:adjustViewBounds="true"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_home_info"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <TextView
+                        android:id="@+id/weatherDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{vm.currentWeather.condition()}"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toBottomOf="@id/whetherStatus"
+                        app:layout_constraintLeft_toRightOf="@+id/guideline"
+                        app:layout_constraintTop_toTopOf="@id/whetherStatus"
+                        tools:text="어제보다 2.4도 높음/구름많음" />
+
+                    <LinearLayout
+                        android:id="@+id/statusGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toRightOf="@+id/guideline"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/weatherDesc">
+
+                        <TextView
+                            android:id="@+id/feel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:drawableLeft="@drawable/img_thermometer"
+                            android:drawablePadding="3dp"
+                            android:fontFamily="@font/spoqa_han_sans_neo_light"
+                            android:gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="@string/feel"
+                            android:textColor="@color/temp_text_color"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/feelTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:gravity="end"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="13dp"
+                            app:convertTemp="@{vm.currentWeather.apparentTemp}"
+                            tools:text="23.2°" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/default_side_margin"
+                            android:drawableLeft="@drawable/img_humidity"
+                            android:drawablePadding="3dp"
+                            android:fontFamily="@font/spoqa_han_sans_neo_light"
+                            android:gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="@string/humidity"
+                            android:textColor="@color/temp_text_color"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:gravity="end"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="13dp"
+                            app:convertHumidity="@{vm.currentWeather.humidity}"
+                            tools:text="32%" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/round_more"
+                        android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:onClick="@{()->vm.onClickNaver()}"
+                        android:text="@string/more_whether"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        app:layout_constraintLeft_toRightOf="@+id/guideline"
+                        app:layout_constraintTop_toBottomOf="@id/statusGroup" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sunriseSunsetLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/gradient_background_sunrise"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weatherLayout">
+
+                    <TextView
+                        android:id="@+id/tvProgressbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/background_theme_status_bar_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/progressbar_sunrise_sunset_title1" />
+
+                    <LinearLayout
+                        android:id="@+id/progressLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProgressbarTitle">
+
+                        <com.moneyweather.ui.CustomProgressBar
+                            android:id="@+id/progressBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSunrise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="18dp"
+                        android:textColor="@color/grey_222"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/progressLayout"
+                        tools:text="일출 00:00" />
+
+                    <TextView
+                        android:id="@+id/tvSunset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="18dp"
+                        android:textColor="@color/grey_222"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/progressLayout"
+                        tools:text="일몰 00:00" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/iv_pomission_zone_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_mission"
+                    app:layout_constraintLeft_toLeftOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="@id/userPoint"
+                    app:layout_constraintTop_toBottomOf="@id/sunriseSunsetLayout" />
+
+                <LinearLayout
+                    android:id="@+id/games"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="@id/userPoint"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_pomission_zone_button"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/btnQuiz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_quiz_bg"
+                        android:drawableTop="@drawable/img_quiz"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/quiz"
+                        android:textColor="@color/grey_222"
+                        android:visibility="gone"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/btnShopPlus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_quiz_bg"
+                        android:drawableTop="@drawable/ic_shopplus"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                        android:gravity="center_horizontal"
+                        android:onClick="@{()->vm.onClickShopPlus()}"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/shop_plus"
+                        android:textColor="@color/grey_222"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/btnGame"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_quiz_bg"
+                        android:drawableTop="@drawable/ic_game"
+                        android:drawablePadding="8dp"
+                        android:layout_marginLeft="12dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                        android:gravity="center_horizontal"
+                        android:onClick="@{()->vm.onClickGame()}"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/save_game"
+                        android:textColor="@color/grey_222"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/btnAccumulate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_quiz_bg"
+                        android:drawableTop="@drawable/img_accumulate"
+                        android:drawablePadding="8dp"
+                        android:layout_marginLeft="12dp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/add_accumulate"
+                        android:textColor="@color/grey_222"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/inviteBanner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/invite_banner"
+                    app:layout_constraintLeft_toLeftOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="@id/userPoint"
+                    app:layout_constraintTop_toBottomOf="@id/games" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/npay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintLeft_toLeftOf="@id/layoutUser"
+                    app:layout_constraintRight_toRightOf="@id/userPoint"
+                    app:layout_constraintTop_toBottomOf="@+id/inviteBanner">
+
+                    <TextView
+                        android:id="@+id/npay_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/npay_shop"
+                        android:textColor="@color/grey_222"
+                        android:textSize="18dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                        android:text="@string/more_see"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/grey_74"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/npay_title"
+                        app:layout_constraintLeft_toRightOf="@id/npay_title"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/npay_title"
+                        tools:listitem="@layout/viewholder_horizon_product" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/min_width_small_button"
+                    app:layout_constraintTop_toBottomOf="@+id/npay" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

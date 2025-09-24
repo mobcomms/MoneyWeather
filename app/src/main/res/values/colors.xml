@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="defaultBgColor">#FFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="warm_grey">#888888</color>
+    <color name="greyish_brown">#555555</color>
+    <color name="grey_222">#222222</color>
+    <color name="grey_333">#333</color>
+    <color name="grey_3a">#3a3a3a</color>
+    <color name="grey_555">#555</color>
+    <color name="grey_999">#999999</color>
+    <color name="grey_eee">#eeeeee</color>
+    <color name="grey_a5">#a5a5a5</color>
+    <color name="grey_74">#747474</color>
+    <color name="grey_41">#414141</color>
+    <color name="pinkish_grey">#bbbbbb</color>
+    <color name="greyish">#aaaaaa</color>
+    <color name="white_three">#e9e9e9</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_icon">#c8c8c8</color>
+    <color name="main_red">#e32309</color>
+    <color name="ripple_color">#dbdbdb</color>
+    <color name="kakao_color">#f9df4a</color>
+    <color name="naver_color">#51af35</color>
+    <color name="default_main_color">#0084fd</color>
+    <color name="disable_btn_color">#555555</color>
+    <color name="disable_find_btn_color">#d1e1ff</color>
+    <color name="orange_color">#ff5c00</color>
+    <color name="point_red_two">#dee91c4d</color>
+    <color name="gnb_off_color">#ccd0db</color>
+    <color name="tab_off_color">#9ea5ad</color>
+    <color name="white_two">#fbfbfb</color>
+    <color name="line_color">#30ffffff</color>
+    <color name="invite_color">#ff7a00</color>
+    <color name="invite_coupon_color">#fcf9e9</color>
+    <color name="light_royal_blue">#2c3cfc</color>
+    <color name="white_four">#dddddd</color>
+    <color name="screen_bg">#f1f2f6</color>
+    <color name="temp_text_color">#b7d5f1</color>
+    <color name="home_more_btn_color">#00a4fd</color>
+    <color name="dust_fine_color">#00ffff</color>
+    <color name="dust_normal_color">#03ff2b</color>
+    <color name="dust_bad_color">#fff500</color>
+    <color name="dust_very_bad_color">#ffc700</color>
+    <color name="dust_fine_color2">#0084fd</color>
+    <color name="dust_normal_color2">#00c17f</color>
+    <color name="dust_bad_color2">#f3ac00</color>
+    <color name="dust_very_bad_color2">#ff1f00</color>
+    <color name="dust_text_color">#99ffffff</color>
+    <color name="low_temp_color">#5064bc</color>
+    <color name="day_week_color">#478cff</color>
+    <color name="hour_weather_line_point">#83478cff</color>
+    <color name="hour_weather_line_color">#33478cff</color>
+    <color name="news_bg_color">#19bbbbbb</color>
+    <color name="weather_forecast_bg">#b2ffffff</color>
+    <color name="news_content_black">#222222</color>
+    <color name="news_content_gray">#5C5c5c</color>
+
+
+    <color name="no_point_background_color">#424242</color>
+
+    <!-- theme_background_color -->
+    <color name="simple_theme_background">#fff6ea</color>
+    <color name="calendar_theme_background">#f0eef8</color>
+    <color name="background_theme_background">#000000</color>
+    <color name="video_theme_background">#000000</color>
+
+    <!-- theme_status_bar_color -->
+    <color name="info_theme_status_bar_color">#DCE4F8</color>
+    <color name="simple_theme_status_bar_color">#FFF6EA</color>
+    <color name="calendar_theme_status_bar_color">#F0EEF8</color>
+    <color name="background_theme_status_bar_color">#000000</color>
+
+    <color name="line_color_2">#e3e3e3</color>
+    <color name="line_color_3">#c7c7c7</color>
+
+    <color name="progress_dialog_background_color">#CC000000</color>
+
+    <color name="point_color">#fe002e</color>
+    <color name="point_color_blue">#146DF1</color>
+
+    <color name="scroll_timer_line">#80000000</color>
+
+    <color name="count_text_color">#dadada</color>
+
+    <color name="popup_info_text_color">#ff1515</color>
+
+    <color name="sunrise_progressbar_dot_color">#ffdb3a</color>
+    <color name="sunrise_progressbar_color">#e6d7d7</color>
+    <color name="sunrise_progressbar_color2">#ffc74e</color>
+    <color name="sunset_progressbar_title_color">#9f9f9f</color>
+
+    <color name="my_point_layout_top_color">#f6f7fb</color>
+    <color name="my_point_layout_bottom_color">#e3e6f3</color>
+    <color name="my_point_text_color">#666666</color>
+
+    <color name="popup_policy_point_color">#fafafc</color>
+
+    <color name="divider_c2c2c2">#c2c2c2</color>
+    <color name="divider_fff">#fff</color>
+
+    <color name="calendar_text">#222222</color>
+    <color name="calendar_blue">#0077ff</color>
+    <color name="calendar_red">#ff0000</color>
+    <color name="calendar_gray">#cccccc</color>
+    <color name="calendar_light_blue">#82bcfe</color>
+    <color name="calendar_light_red">#ffb4b4</color>
+    <color name="calendar_selected_color">#a8a8a8</color>
+
+    <color name="lock_screen_bottom_banner_point">#4786FF</color>
+
+    <color name="circle_progress_default">#bfbfbf</color>
+    <color name="circle_progress">#4786ff</color>
+</resources>

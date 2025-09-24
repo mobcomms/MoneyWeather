@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- Common -->
+    <dimen name="default_text_size_big">44dp</dimen>
+    <dimen name="default_text_size_2xxl">25dp</dimen>
+    <dimen name="default_text_size_2xl">24dp</dimen>
+    <dimen name="default_text_size_ad_title">23dp</dimen>
+    <dimen name="default_text_size_xxxxxl">20dp</dimen>
+    <dimen name="default_text_size_xxxxl">18dp</dimen>
+    <dimen name="default_text_size_xxxl">17dp</dimen>
+    <dimen name="default_text_size_xxl">16dp</dimen>
+    <dimen name="default_text_size_xl">15dp</dimen>
+    <dimen name="default_text_size_l">14dp</dimen>
+    <dimen name="default_text_size_m">13dp</dimen>
+    <dimen name="default_text_size_mm">12dp</dimen>
+    <dimen name="default_text_size_mmm">11dp</dimen>
+    <dimen name="default_text_size_s">10dp</dimen>
+    <dimen name="default_text_size_ss">9dp</dimen>
+    <dimen name="default_text_size_sss">8dp</dimen>
+
+    <dimen name="default_side_margin">18dp</dimen>
+    <dimen name="default_side_margin_half">7dp</dimen>
+    <dimen name="default_side_margin_food_sub_title">6dp</dimen>
+    <dimen name="default_tab_height">38dp</dimen>
+    <dimen name="default_line_size">0.5dp</dimen>
+    <dimen name="default_line_size_double">1dp</dimen>
+    <dimen name="default_line_size_2">0.2dp</dimen>
+    <dimen name="default_line_size_minus">-0.5dp</dimen>
+    <dimen name="default_actionbar_height">60dp</dimen>
+    <dimen name="default_actionbar_btn_size">26dp</dimen>
+    <integer name="default_photo_rounded_corner">8</integer>
+    <dimen name="default_signin_padding">15dp</dimen>
+    <integer name="number_zero">0</integer>
+    <integer name="number_one">1</integer>
+    <dimen name="action_bar_height">58dp</dimen>
+    <dimen name="dot_size">20dp</dimen>
+    <dimen name="height_button">45dp</dimen>
+
+    <!--[START : FONT SIZE]-->
+    <dimen name="font_xxxsmall">9sp</dimen>
+    <dimen name="font_xxsmall">10sp</dimen>
+    <dimen name="font_xsmall">11sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_medium">14sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_title">19sp</dimen>
+    <dimen name="font_title_large">20sp</dimen>
+    <dimen name="font_dialog_title">16sp</dimen>
+    <dimen name="font_point">20sp</dimen>
+    <dimen name="font_point_large">30sp</dimen>
+    <dimen name="font_icon_title">11sp</dimen>
+
+    <!--[END : FONT SIZE]-->
+
+    <!--[START : PADDING, MARGIN SIZE]-->
+    <dimen name="space_tiny">2dp</dimen>
+    <dimen name="space_xxxxsmall">3dp</dimen>
+    <dimen name="space_xxxsmall">5dp</dimen>
+    <dimen name="space_xxsmall">7dp</dimen>
+    <dimen name="space_xsmall">10dp</dimen>
+    <dimen name="space_small">13dp</dimen>
+    <dimen name="space_small_2">12dp</dimen>
+    <dimen name="space_medium">15dp</dimen>
+    <dimen name="space_large">18dp</dimen>
+    <dimen name="space_xlarge">20dp</dimen>
+    <dimen name="space_xxlarge">22dp</dimen>
+    <dimen name="space_xxxlarge">25dp</dimen>
+    <dimen name="space_xxxxlarge">28dp</dimen>
+    <dimen name="space_huge">30dp</dimen>
+    <dimen name="space_xhuge">60dp</dimen>
+    <!--[END : PADDING, MARGIN SIZE]-->
+
+    <dimen name="min_height_button">54dp</dimen>
+    <dimen name="min_height_edittext">40dp</dimen>
+    <dimen name="product_image_size">84dp</dimen>
+    <dimen name="height_tab_indicator">4dp</dimen>
+    <dimen name="min_height_button_rect">60dp</dimen>
+    <dimen name="min_width_small_button">66dp</dimen>
+    <dimen name="min_height_small_button">30dp</dimen>
+
+    <!-- Lock Screen -->
+    <dimen name="contents_horizontal_margin">18dp</dimen>
+    <dimen name="banner_container_height">75dp</dimen>
+    <dimen name="adpie_banner_height">50dp</dimen>
+    <dimen name="bottom_banner_point_circle_size">28dp</dimen>
+
+    <!-- Point Policy WebView -->
+    <dimen name="main_point_policy_info_height">536dp</dimen>
+    <dimen name="lock_point_policy_info_height">233dp</dimen>
+
+</resources>

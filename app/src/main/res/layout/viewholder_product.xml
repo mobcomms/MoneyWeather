@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickListener"
+            type="OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_effect"
+        android:onClick="@{clickListener::onClick}">
+
+        <Space
+            android:id="@+id/spaceTop"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="@dimen/product_image_size"
+            android:layout_height="@dimen/product_image_size"
+            android:layout_marginStart="@dimen/space_medium"
+            app:layout_constraintBottom_toTopOf="@+id/spaceBottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceTop"
+            app:layout_constraintVertical_bias="0"
+            tools:src="@drawable/img_store_sample" />
+
+        <ImageView
+            android:id="@+id/imgProductCover"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_product_outline"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProduct"
+            app:layout_constraintEnd_toEndOf="@+id/imgProduct"
+            app:layout_constraintStart_toStartOf="@+id/imgProduct"
+            app:layout_constraintTop_toTopOf="@+id/imgProduct" />
+
+        <TextView
+            android:id="@+id/txtPlaceForSale"
+            style="@style/FontStyle.PinkishGrey.Small"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="@dimen/space_tiny"
+            android:layout_marginEnd="@dimen/space_medium"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@+id/spaceTop"
+            tools:text="스타벅스" />
+
+        <TextView
+            android:id="@+id/txtProduct"
+            style="@style/FontStyle.Black.Medium"
+            android:layout_marginTop="@dimen/space_xxxsmall"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@+id/txtPlaceForSale"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/txtPlaceForSale"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlaceForSale"
+            tools:text="카페아메리카노 Tall" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            style="@style/FontStyle.Black.Medium"
+            android:layout_marginTop="@dimen/space_xxxsmall"
+            android:textStyle="bold"
+            android:textColor="@color/default_main_color"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/spaceBottom"
+            app:layout_constraintEnd_toEndOf="@+id/txtPlaceForSale"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/txtPlaceForSale"
+            app:layout_constraintTop_toBottomOf="@+id/txtProduct"
+            tools:text="6,250P" />
+
+        <Space
+            android:id="@+id/spaceBottom"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/lineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/lineBottom"
+            style="@style/HorizontalLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickListener"
+            type="OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnCoupon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_effect"
+        android:onClick="@{clickListener::onClick}">
+
+        <Space
+            android:id="@+id/spaceTop"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="@dimen/product_image_size"
+            android:layout_height="@dimen/product_image_size"
+            android:layout_marginStart="@dimen/space_medium"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_store_1"
+            app:layout_constraintBottom_toTopOf="@+id/spaceBottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spaceTop"
+            app:layout_constraintVertical_bias="0"
+            tools:alpha="0.5" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/background_product_outline"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProduct"
+            app:layout_constraintEnd_toEndOf="@+id/imgProduct"
+            app:layout_constraintStart_toStartOf="@+id/imgProduct"
+            app:layout_constraintTop_toTopOf="@+id/imgProduct" />
+
+        <TextView
+            android:id="@+id/txtAffiliate"
+            style="@style/FontStyle.Black.Small"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/space_medium"
+            android:layout_marginTop="@dimen/space_xxxxsmall"
+            android:layout_marginEnd="@dimen/space_medium"
+            android:textColor="@color/pinkish_grey"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/txtStatus"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@+id/spaceTop"
+            tools:text="스타벅스" />
+
+        <TextView
+            android:id="@+id/txtProduct"
+            style="@style/FontStyle.Black.Medium"
+            android:layout_marginTop="@dimen/space_xxxxsmall"
+            android:includeFontPadding="true"
+            android:maxLines="2"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@+id/txtAffiliate"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/txtAffiliate"
+            app:layout_constraintTop_toBottomOf="@+id/txtAffiliate"
+            tools:text="부드러운 연유브레드" />
+
+        <TextView
+            android:id="@+id/txtDueDate"
+            style="@style/FontStyle.PinkishGrey.Small"
+            android:layout_marginTop="@dimen/space_xsmall"
+            android:layout_marginBottom="@dimen/space_xxxxsmall"
+            android:includeFontPadding="true"
+            android:text="2020. 12. 12까지"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/spaceBottom"
+            app:layout_constraintEnd_toEndOf="@+id/txtAffiliate"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/txtAffiliate"
+            app:layout_constraintTop_toBottomOf="@+id/txtProduct"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupCouponStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="viewStatus,txtStatus"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/viewStatus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/lineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            style="@style/FontStyle.Black.Medium"
+            android:layout_marginEnd="@dimen/space_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/lineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="환불완료"
+            tools:textColor="@color/main_red" />
+
+        <Space
+            android:id="@+id/spaceBottom"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/lineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/lineBottom"
+            style="@style/HorizontalLine"
+            android:layout_marginTop="@dimen/space_xsmall"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

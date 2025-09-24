@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.LoginEmailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="28dp"
+        android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/imgTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="54dp"
+                    android:scaleType="center"
+                    android:src="@drawable/img_join_top"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            changeTitleColor="@{@string/don_see}"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.01"
+            android:textColor="@color/grey_222"
+            android:textSize="16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgTop"
+            tools:text="날씨가 돈이 되는 순간, 돈씨"/>
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="@dimen/space_medium"
+                    app:hint="@string/id_input_hint"
+                    app:inputType="textWebEmailAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgTop" />
+
+                <com.moneyweather.ui.HCEditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xlarge"
+                    app:hint="@string/pw_input_hint"
+                    app:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                    app:layout_constraintStart_toStartOf="@+id/editEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+                <LinearLayout
+                    android:id="@+id/saveAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp"
+                    android:onClick="@{vm.onClickSave}"
+                    app:layout_constraintEnd_toEndOf="@+id/editPassword"
+                    app:layout_constraintStart_toStartOf="@+id/editPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/editPassword"
+                    >
+                    <ImageView
+                        android:id="@+id/imgCheckBox"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="@dimen/space_medium"
+                        android:duplicateParentState="true"
+                        android:src="@drawable/selector_checkbox"
+                         />
+
+                    <TextView
+                        android:id="@+id/txtContent"
+                        style="@style/FontStyle"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/space_xsmall"
+                        android:duplicateParentState="true"
+                        android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textColor="@color/grey_222"
+                        android:textSize="@dimen/font_medium"
+                        android:text="@string/save_email"
+                         />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    style="@style/ButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/space_huge"
+                    android:text="@string/login"
+                    android:enabled="@{vm.signVerify}"
+                    app:layout_constraintEnd_toEndOf="@+id/saveAccount"
+                    app:layout_constraintStart_toStartOf="@+id/saveAccount"
+                    app:layout_constraintTop_toBottomOf="@+id/saveAccount" />
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    style="@style/TextButtonStyle"
+                    android:onClick="onClick"
+                    android:text="@string/new_signup"
+                    android:textColor="@color/default_main_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSearchPw"
+                    app:layout_constraintEnd_toStartOf="@+id/line_1"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnSearchPw" />
+
+                <View
+                    android:id="@+id/line_1"
+                    style="@style/VerticalLine"
+                    android:layout_height="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSignUp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSearchEmail"
+                    app:layout_constraintStart_toEndOf="@+id/btnSignUp"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+
+                <Button
+                    android:id="@+id/btnSearchEmail"
+                    style="@style/TextButtonStyle"
+                    android:onClick="onClick"
+                    android:text="@string/search_id"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSignUp"
+                    app:layout_constraintEnd_toStartOf="@+id/line_2"
+                    app:layout_constraintStart_toEndOf="@+id/line_1"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+
+                <View
+                    android:id="@+id/line_2"
+                    style="@style/VerticalLine"
+                    android:layout_height="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSignUp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSearchPw"
+                    app:layout_constraintStart_toEndOf="@+id/btnSearchEmail"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+
+                <Button
+                    android:id="@+id/btnSearchPw"
+                    style="@style/TextButtonStyle"
+                    android:layout_marginTop="@dimen/space_huge"
+                    android:onClick="onClick"
+                    android:text="@string/search_pw"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/line_2"
+                    app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+
+        <Button
+            android:id="@+id/btnPrev"
+            style="@style/TextButtonStyle"
+            android:onClick="onClick"
+            android:text="@string/prev_return"
+            android:textColor="@color/grey_74"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

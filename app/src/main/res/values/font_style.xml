@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="customTextViewFontStyle" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="customButtonFontStyle" parent="@android:style/Widget.DeviceDefault.Button.Borderless">
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="customEditTextFontStyle" parent="@android:style/Widget.DeviceDefault.EditText">
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="customRadioButtonFontStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="customCheckboxFontStyle" parent="@android:style/Widget.DeviceDefault.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+
+
+
+    <!-- [START : xml textview font style (color, size) 정의] -->
+
+    <style name="FontStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+    </style>
+
+    <style name="FontStyle.Black" parent="FontStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="FontStyle.Black.XXSmall" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_xxsmall</item>
+    </style>
+
+    <style name="FontStyle.Black.XSmall" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_xsmall</item>
+    </style>
+
+    <style name="FontStyle.Black.Small" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.Black.Medium" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.Black.Large" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <!--    <style name="FontStyle.Black.XLarge" parent="FontStyle.Black">
+            <item name="android:textSize">@dimen/font_xlarge</item>
+        </style>-->
+
+    <style name="FontStyle.White" parent="FontStyle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FontStyle.White.XSmall" parent="FontStyle.White">
+        <item name="android:textSize">@dimen/font_xsmall</item>
+    </style>
+
+    <style name="FontStyle.White.Small" parent="FontStyle.White">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.White.Medium" parent="FontStyle.White">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.White.Large" parent="FontStyle.White">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey" parent="FontStyle">
+        <item name="android:textColor">@color/warm_grey</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey.XXSmall" parent="FontStyle.WarmGrey">
+        <item name="android:textSize">@dimen/font_xxsmall</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey.XSmall" parent="FontStyle.WarmGrey">
+        <item name="android:textSize">@dimen/font_xsmall</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey.Small" parent="FontStyle.WarmGrey">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey.Medium" parent="FontStyle.WarmGrey">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.WarmGrey.Large" parent="FontStyle.WarmGrey">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown" parent="FontStyle">
+        <item name="android:textColor">@color/greyish_brown</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown.XXSmall" parent="FontStyle.GreyishBrown">
+        <item name="android:textSize">@dimen/font_xxsmall</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown.XSmall" parent="FontStyle.GreyishBrown">
+        <item name="android:textSize">@dimen/font_xsmall</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown.Small" parent="FontStyle.GreyishBrown">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown.Medium" parent="FontStyle.GreyishBrown">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.GreyishBrown.Large" parent="FontStyle.GreyishBrown">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="FontStyle.PinkishGrey" parent="FontStyle">
+        <item name="android:textColor">@color/pinkish_grey</item>
+    </style>
+
+    <style name="FontStyle.PinkishGrey.Small" parent="FontStyle.PinkishGrey">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.PinkishGrey.Medium" parent="FontStyle.PinkishGrey">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.Greyish" parent="FontStyle">
+        <item name="android:textColor">@color/greyish</item>
+    </style>
+
+    <style name="FontStyle.Greyish.Small" parent="FontStyle.Greyish">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="FontStyle.Greyish.Medium" parent="FontStyle.Greyish">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="FontStyle.TitleBar" parent="FontStyle.Black">
+        <item name="android:textSize">@dimen/font_title</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- [END : xml textview font style (color, size) 정의] -->
+
+
+</resources>

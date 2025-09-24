@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.InviteFriendViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_two">
+
+        <include
+            android:id="@+id/iActionBar"
+            layout="@layout/view_common_action_bar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_below="@id/iActionBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_event_invite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/code_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_grey"
+                    android:layout_marginLeft="@dimen/default_side_margin"
+                    android:layout_marginRight="@dimen/default_side_margin"
+                    android:layout_marginTop="30dp"
+                    android:padding="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logo"
+                    >
+
+                    <TextView
+                        android:id="@+id/code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:text="@{vm.resultData.inviteCode}"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/grey_222"
+                        android:textSize="28dp"
+                        tools:text="GGGP1777"
+                       />
+
+                  <LinearLayout
+                      android:id="@+id/copy_layout"
+                      android:layout_width="match_parent"
+                      android:layout_height="40dp"
+                      android:orientation="horizontal"
+                      android:gravity="center"
+                      android:layout_below="@+id/code"
+                      >
+
+                      <ImageView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:adjustViewBounds="true"
+                          android:src="@drawable/icon_invite_copy"/>
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                          android:gravity="center"
+                          android:text="@string/invate_code_copy"
+                          android:includeFontPadding="false"
+                          android:textColor="@color/grey_555"
+                          android:textSize="14dp"
+
+                          />
+
+
+                  </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/btnInvate"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:includeFontPadding="false"
+                    android:text="@string/invate_friend"
+                    android:textColor="@color/white"
+                    android:background="@drawable/round_invite_bg"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="@id/code_layout"
+                    app:layout_constraintRight_toRightOf="@id/code_layout"
+                    app:layout_constraintTop_toBottomOf="@id/code_layout"/>
+
+                <TextView
+                    android:id="@+id/btnInputFriendCode"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/round_invite_bg2"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/invate_input_friend_code"
+                    android:textColor="@color/invite_color"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="@id/code_layout"
+                    app:layout_constraintRight_toRightOf="@id/code_layout"
+                    app:layout_constraintTop_toBottomOf="@id/btnInvate" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:gravity="left"
+                    android:includeFontPadding="false"
+                    android:text="@string/invate_desc1"
+                    android:textColor="@color/grey_222"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="@id/code_layout"
+                    app:layout_constraintRight_toRightOf="@id/code_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/btnInputFriendCode" />
+
+
+                <LinearLayout
+                    android:id="@+id/coupon_layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_invite_coupon_bg"
+                    android:layout_marginLeft="@dimen/default_side_margin"
+                    android:layout_marginRight="@dimen/default_side_margin"
+                    android:layout_marginTop="30dp"
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/desc"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/invate_desc2"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/grey_74"
+                        android:textSize="20dp"
+                        />
+
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="27dp"
+                            android:src="@drawable/img_event_invite_my"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                            android:gravity="center"
+                            android:text="@string/invate_desc3"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/grey_222"
+                            android:textSize="18dp"
+
+                            />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/invate_desc4"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/orange_color"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/coupon_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_invite_coupon_bg"
+                    android:layout_marginLeft="@dimen/default_side_margin"
+                    android:layout_marginRight="@dimen/default_side_margin"
+                    android:layout_marginTop="30dp"
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/coupon_layout1"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/invate_desc5"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/grey_74"
+                        android:textSize="20dp"
+                        />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="27dp"
+                        android:src="@drawable/img_event_invite_friend"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:text="@string/invate_desc6"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/grey_222"
+                        android:textSize="18dp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/invate_desc7"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/orange_color"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/menuLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/round_withdraw_menu_bg"
+                    android:padding="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/coupon_layout2"
+                    tools:layout_editor_absoluteX="0dp">
+
+                    <TextView
+                        android:id="@+id/infoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/invate_info_title1"
+                        android:textColor="@color/grey_555"
+                        android:textSize="18dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/info1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/infoTitle">
+
+                        <ImageView
+                            android:id="@+id/icon1"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon1"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc1"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/info2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info1">
+
+                        <ImageView
+                            android:id="@+id/icon2"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon2"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc2"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/info3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info2">
+
+                        <ImageView
+                            android:id="@+id/icon3"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon3"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc3"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/infoTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/invate_info_title2"
+                        android:textColor="@color/grey_555"
+                        android:textSize="18dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info3" />
+
+                    <RelativeLayout
+                        android:id="@+id/info4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/infoTitle2"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/icon4"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon4"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc4"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/info5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info4"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/icon5"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon5"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc5"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info5">
+
+                        <ImageView
+                            android:id="@+id/icon6"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_toRightOf="@+id/icon6"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/invate_info_desc6"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grey_555"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/space_medium">
+
+        <TextView
+            android:id="@+id/txtContent"
+            style="@style/FontStyle.WarmGrey.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:includeFontPadding="true"
+            android:lineSpacingExtra="6sp"
+            app:layout_constrainedHeight="true"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="곧 길지 있으며, 이것이다. 눈에 별과 인생을 착목한는 어디 운다. 얼마나 청춘의 것은 과실이 이성은 우리 힘있다. 얼마나 같이, 곳이 뼈 가장 인도하겠다는 거선의 것이다. 내는 위하여, 불어 붙잡아 속에 있으랴? 구하지 찾아 뜨고, 청춘에서만 심장은 운다. 이상 평화스러운날카로우나 그러므로 같이, 우리의 청춘의 피다. 하는 얼음과 생명을수있으랴? 트고, 소금이라 싹이 황금시대다. 곧 길지 있으며, 이것이다. 눈에 별과 인생을 착목한는 어디 운다. 얼마나 청춘의 것은 과실이 이성은 우리 힘있다. 얼마나 같이, 곳이 뼈 가장 인도하겠다는 거선의 것이다. 내는 위하여, 불어 붙잡아 속에 있으랴? 구하지 찾아 뜨고, 청춘에서만 심장은 운다. 이상 평화스러운날카로우나 그러므로같이,우리의 청춘의 피다. 하는 얼음과 생명을 있으랴? 트고, 소금이라 싹" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

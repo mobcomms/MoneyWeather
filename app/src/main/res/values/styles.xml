@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="rippleEffect">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:selectableItemBackground</item>
+    </style>
+
+    <style name="Transparent" parent="@style/Theme.AppCompat.Transparent.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="HorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/white_three</item>
+    </style>
+
+    <style name="NoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/main_red</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="NumberPicker">
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorHighlight">@color/black</item>
+        <item name="android:editTextColor">@color/black</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+    </style>
+
+    <style name="HCProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">@color/black</item>
+    </style>
+
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShopTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+
+    <style name="TabTextStyle">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
+    </style>
+
+    <style name="SmallTabTextStyle">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
+    </style>
+
+    <style name="Spinner">
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
+        <item name="android:textColor">#303030</item>
+    </style>
+
+    <style name="bottom_tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="category_tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="CGVPlus.Widget.TransparentBottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBottomSheetDialogFragmentChild</item>
+    </style>
+
+    <style name="TransparentBottomSheetDialogFragmentChild" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="CalendarHeader" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
+    </style>
+
+    <style name="CalendarWeekDay" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
+    </style>
+
+    <style name="CalendarDate" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/spoqa_han_sans_neo_regular</item>
+    </style>
+
+    <style name="CalendarViewAttd" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="CalenderViewDateAttdText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:weekNumberColor">@color/white</item>
+    </style>
+
+    <style name="CalenderViewWeekAttdText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SettingSwitchButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:switchMinWidth">40dp</item>
+        <item name="android:thumb">@drawable/switch_thum_bg</item>
+        <item name="android:track">@drawable/switch_track_bg</item>
+    </style>
+
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/min_height_button</item>
+        <item name="android:background">@drawable/selector_button_default</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:paddingStart">@dimen/space_xsmall</item>
+        <item name="android:paddingTop">@dimen/space_xxxsmall</item>
+        <item name="android:paddingEnd">@dimen/space_xsmall</item>
+        <item name="android:paddingBottom">@dimen/space_xxxsmall</item>
+    </style>
+
+    <style name="TextButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/warm_grey</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:paddingStart">@dimen/space_medium</item>
+        <item name="android:paddingTop">@dimen/space_xsmall</item>
+        <item name="android:paddingEnd">@dimen/space_medium</item>
+        <item name="android:paddingBottom">@dimen/space_xsmall</item>
+    </style>
+
+    <style name="VerticalLine">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@color/white_three</item>
+    </style>
+
+    <style name="windowFullscreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">@dimen/default_text_size_xxxxxl</item>
+        <item name="tabMinWidth">0dp</item>
+        <item name="tabPaddingStart">8dp</item>
+        <item name="tabPaddingEnd">8dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">@dimen/default_tab_height</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabSelectedTextColor">@color/grey_222</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">@color/default_main_color</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabTextColor">@color/tab_off_color</item>
+    </style>
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/default_text_size_xxxxxl</item>
+        <item name="fontFamily">@font/spoqa_han_sans_neo_bold</item>
+        <!--<item name="android:letterSpacing">2</item>-->
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="TabStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="tabIndicatorColor">@color/default_main_color</item>
+        <item name="tabIndicatorHeight">@dimen/height_tab_indicator</item>
+        <item name="tabSelectedTextColor">@color/default_main_color</item>
+        <item name="tabTextColor">@color/black</item>
+    </style>
+
+    <style name="ButtonStyle.Rect" parent="ButtonStyle">
+        <item name="android:background">@drawable/selector_button_rect_default</item>
+        <item name="android:minHeight">@dimen/min_height_button_rect</item>
+    </style>
+
+    <style name="WriteEditStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">46dp</item>
+        <item name="android:textColor">@color/greyish_brown</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColorHint">@color/pinkish_grey</item>
+        <item name="android:background">@drawable/background_write_edittext</item>
+        <item name="android:paddingStart">@dimen/space_medium</item>
+        <item name="android:paddingTop">@dimen/space_xsmall</item>
+        <item name="android:paddingEnd">@dimen/space_medium</item>
+        <item name="android:paddingBottom">@dimen/space_xsmall</item>
+        <item name="android:textCursorDrawable">@drawable/edittext_cursor</item>
+    </style>
+
+
+</resources>

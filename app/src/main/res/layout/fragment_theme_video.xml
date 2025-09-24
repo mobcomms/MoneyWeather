@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.moneyweather.viewmodel.ThemeViewModel" />
+    </data>
+
+    <com.moneyweather.ui.SlideDetectConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/video_theme_background"
+        tools:background="@color/color_blue">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/bg_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            app:resize_mode="fixed_height"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+        <ImageView
+            android:id="@+id/bg_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/view_common_lock_top" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:includeFontPadding="false"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar"
+            tools:text="4월 10일 수요일 17:55" />
+
+        <TextView
+            android:id="@+id/tv_sky_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@{vm.skyDescription}"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            tools:text="구름많음" />
+
+        <TextView
+            android:id="@+id/tv_cur_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="-8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="84dp"
+            app:convertFloatTemp="@{vm.temperature}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sky_desc"
+            tools:text="23°" />
+
+        <LinearLayout
+            android:id="@+id/ll_weather_desc_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_cur_temp">
+
+            <TextView
+                android:id="@+id/tv_weather_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{vm.lockCalendarCondition}"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                tools:text="어제보다 2.4" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/feel"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tv_apparent_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="end"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:convertTemp="@{vm.apparentTemp}"
+                tools:text="23.2°" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/humidity"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tv_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="end"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:convertHumidity="@{vm.humidity}"
+                tools:text="23%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dust_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_weather_desc_layout">
+
+            <TextView
+                android:id="@+id/tv_pm10_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:fineDust="@{vm.pm10Description}"
+                app:useOriColor="@{true}"
+                tools:text="미세먼지 보통" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_pm25_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/spoqa_han_sans_neo_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:ultraDust="@{vm.pm25Description}"
+                app:useOriColor="@{true}"
+                tools:text="초미세먼지 보통" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_dust_layout">
+
+            <!-- news -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_news_layout"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_news_bg"
+                android:visibility="gone"
+                tools:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/round_news"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:gravity="center"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:text="@string/news"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/ko_pub_world_bold"
+                    android:singleLine="true"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/title"
+                    app:layout_constraintRight_toLeftOf="@+id/newsBtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="전국 지방선거 일제히 시작 투표률이 전국에 전파 되었습니다. 장문 장문 장문 장문 장문  " />
+
+                <ImageView
+                    android:id="@+id/newsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/icon_arrow_white"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- news button -->
+            <View
+                android:id="@+id/v_news_button"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_gravity="right|bottom" />
+
+            <!-- news point -->
+            <RelativeLayout
+                android:id="@+id/rl_news_point_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="12dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/newsPointCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/newsPointTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/point_color"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingLeft="7dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        tools:text="+1" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/newsPointCV"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/background_bubble_red" />
+            </RelativeLayout>
+
+            <!-- weather forecast -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_weather_forecast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_weather_forecast_bg"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_weather_forecast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/megaphone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tv_weather_forecast_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_weather_forecast_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/ko_pub_world_bold"
+                    android:singleLine="true"
+                    android:text="@{vm.weatherForecast}"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/news_content_black"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_weather_forecast_close"
+                    app:layout_constraintStart_toEndOf="@+id/iv_weather_forecast"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="전국 지방선거 일제히 시작 투표률이 전국에 전파 되었습니다. 장문 장문 장문 장문 장문  " />
+
+                <ImageView
+                    android:id="@+id/iv_weather_forecast_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/ic_close_padded_w"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <include
+            android:id="@+id/bottomArea"
+            layout="@layout/view_common_lock_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <!-- 하단 띠배너 : AdPie Native, Mobwith -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/banner_container"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/banner_container_height"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- 하단 띠배너 : AdPie Banner-->
+        <com.gomfactory.adpie.sdk.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/adpie_banner_height"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- 하단 띠배너 포인트 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_bottom_banner_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_marginBottom="60dp"
+            tools:layout_marginRight="10dp"
+            tools:visibility="visible">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bottom_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_bottom_banner_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/point_color"
+                    android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    tools:text="1P" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_bubble_red"
+                app:layout_constraintEnd_toEndOf="@id/cv_bottom_point"
+                app:layout_constraintStart_toStartOf="@id/cv_bottom_point"
+                app:layout_constraintTop_toBottomOf="@id/cv_bottom_point" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_popup_banner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/transparent"
+            android:elevation="12dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/fl_popup_banner_container"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginBottom="120dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_popup_close"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/background_oval_black"
+                android:padding="4dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_close_w"
+                app:layout_constraintBottom_toTopOf="@id/fl_popup_banner_container"
+                app:layout_constraintEnd_toEndOf="@id/fl_popup_banner_container"
+                app:layout_constraintStart_toEndOf="@id/fl_popup_banner_container"
+                app:layout_constraintTop_toTopOf="@id/fl_popup_banner_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.moneyweather.ui.SlideDetectConstraintLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/region"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            tools:text="서울시 23" />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            tools:text="서울시 23" />
+
+        <TextView
+            android:id="@+id/weatherDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:includeFontPadding="false"
+            android:textAlignment="viewStart"
+            android:textColor="@color/grey_3a"
+            android:textSize="14dp"
+            tools:text="전일보다 3도 높아요" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/wImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/icon_weather_1" />
+
+</LinearLayout>
