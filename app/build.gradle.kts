@@ -280,7 +280,7 @@ dependencies {
     implementation("com.jakewharton.threetenabp:threetenabp:1.4.4")
 
     // 에이닉
-    implementation(files("libs/en_banner_20250923.aar"))
+    implementation(files("libs/en_banner_20250924.aar"))
 
     // unity
 //    implementation("com.ironsource.sdk:mediationsdk:8.3.0")

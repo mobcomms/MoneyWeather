@@ -351,6 +351,15 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <RelativeLayout
+                    android:id="@+id/mainDaroMrecContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sunriseSunsetLayout"/>
+
                 <ImageView
                     android:id="@+id/iv_pomission_zone_button"
                     android:layout_width="0dp"
@@ -360,7 +369,7 @@
                     android:src="@drawable/img_mission"
                     app:layout_constraintLeft_toLeftOf="@id/layoutUser"
                     app:layout_constraintRight_toRightOf="@id/userPoint"
-                    app:layout_constraintTop_toBottomOf="@id/sunriseSunsetLayout" />
+                    app:layout_constraintTop_toBottomOf="@id/mainDaroMrecContainer" />
 
                 <LinearLayout
                     android:id="@+id/games"
@@ -515,6 +524,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/mainDaroContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

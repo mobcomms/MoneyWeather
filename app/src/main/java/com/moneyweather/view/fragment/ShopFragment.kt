@@ -54,9 +54,19 @@ class ShopFragment : BaseKotlinFragment<FragmentShopBinding, ShopViewModel>() {
             isNpayShop = it.getBoolean("isNpay")
 
         }
+
         if (isNpayShop) {
             viewDataBinding.topTab.visibility = View.GONE
+
+            val daroShopBannerView = viewModel.getDaroShopBanner(activity)
+            if ( daroShopBannerView != null ) {
+                viewDataBinding.shopDaroMainBanner.visibility = View.VISIBLE
+                viewDataBinding.shopDaroMainBanner.removeAllViews()
+                viewDataBinding.shopDaroMainBanner.addView(daroShopBannerView)
+            } else
+                viewDataBinding.shopDaroMainBanner.visibility = View.GONE
         } else {
+            viewDataBinding.shopDaroMainBanner.visibility = View.GONE
             viewModel.resultCategoryList.observe(this, Observer {
                 mCategoryList = it
 
