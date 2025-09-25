@@ -29,8 +29,8 @@ android {
         applicationId = "com.moneyweather"
         minSdk = 26
         targetSdk = 35
-        versionCode = 73
-        versionName = "1.0.41"
+        versionCode = 74
+        versionName = "1.0.42"
 
         setProperty("archivesBaseName", "${appName}_v${versionName}($versionCode)_$date")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -280,7 +280,7 @@ dependencies {
     implementation("com.jakewharton.threetenabp:threetenabp:1.4.4")
 
     // 에이닉
-    implementation(files("libs/en_banner_20250924.aar"))
+    implementation(files("libs/en_banner_20250925.aar"))
 
     // unity
 //    implementation("com.ironsource.sdk:mediationsdk:8.3.0")
@@ -350,4 +350,13 @@ dependencies {
     implementation("so.daro:daro-core:1.3.0")
     implementation("so.daro:daro-m:1.3.0")
 
+}
+
+/**
+ * 👇 SafeDK Task 비활성화 (빌드 시 충돌 방지)
+ */
+gradle.taskGraph.whenReady {
+    allTasks
+        .filter { task -> task.name.contains("safedk", ignoreCase = true) }
+        .forEach { task -> task.enabled = false }
 }
