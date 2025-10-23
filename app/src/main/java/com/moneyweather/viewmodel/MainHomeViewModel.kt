@@ -4,11 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.enliple.banner.MobSDK
 import com.enliple.banner.common.Listener
+import com.enliple.banner.common.MobConstant
+import com.enliple.banner.view.DaroView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.moneyweather.R
 import com.moneyweather.base.BaseKotlinViewModel
@@ -47,6 +51,28 @@ class MainHomeViewModel @Inject constructor(
     var resultProductList: MutableLiveData<List<ShopProductItem>> = MutableLiveData()
     var resultScreenPopupsActive: MutableLiveData<ScreenPopupsActiveResponse.Data> = MutableLiveData()
     var resultNoticeDetail: MutableLiveData<NoticeDetailResponse.Data> = MutableLiveData()
+    private val _adClosed = MutableLiveData<Boolean>()
+    val adClosed: LiveData<Boolean> get() = _adClosed
+
+    fun getDaroLightPopup(context: FragmentActivity?): DaroView? {
+        if ( context == null )
+            return null
+        return MobSDK.getDaroView(
+            context,
+            MobConstant.DARO_AD_TYPE_LIGHT_POPUP,
+            MobConstant.DONSEE_INAPP_MAIN_SPLASH,
+            null)
+    }
+
+    fun getDaroMrec(context: FragmentActivity?): DaroView? {
+        if ( context == null )
+            return null
+        return MobSDK.getDaroView(
+            context,
+            MobConstant.DARO_AD_TYPE_MREC,
+            MobConstant.DONSEE_INAPP_HOME_MREC,
+            null)
+    }
 
     fun connectSearchProduct(category: String,affiiliate : String, search : String, page : Int, type : Boolean) {
         addDisposable(

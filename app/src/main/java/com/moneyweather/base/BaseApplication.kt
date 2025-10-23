@@ -105,7 +105,7 @@ class BaseApplication : Application() {
     private fun initAnicGameZoneSDK() {
         MobSDK.init(appContext(), this, ANIC_MEDIA_CODE)
         MobSDK.setBannerViewMode(MobConstant.AD_VIEW_MODE_ACTIVITY)
-        MobSDK.setDebug(true)
+        MobSDK.setDebug(false)
     }
 
     private fun initAdPieSDK() {

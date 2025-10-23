@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "303146281699",
+    "project_id": "donsee",
+    "storage_bucket": "donsee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303146281699:android:4ab23355c3fc5aa4b4f3d6",
+        "android_client_info": {
+          "package_name": "com.moneyweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303146281699-290ramuec6lkosasl2cjrf8f80tvn4cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moneyweather",
+            "certificate_hash": "72c5abb340a1fd3fdeeb4e6c737cc88b061485d1"
+          }
+        },
+        {
+          "client_id": "303146281699-74r8gs4oa6pkk4oaelb9dp56a6d6ndrt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moneyweather",
+            "certificate_hash": "9649c80f406297e93d8b5fc740452562a6e35c6c"
+          }
+        },
+        {
+          "client_id": "303146281699-874a58au0scbm56h4scld9vh81rturmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moneyweather",
+            "certificate_hash": "04fbc00d736b22f077a32464561a759522610916"
+          }
+        },
+        {
+          "client_id": "303146281699-8bl75u9c1q2g8gq3dmf58f2uv9lsk5v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moneyweather",
+            "certificate_hash": "ca46d24fbdeb5c6fafdd413d168cb04128197908"
+          }
+        },
+        {
+          "client_id": "303146281699-tguf8bdan3b4uv7qlqva12bioi5tdkk3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmUdaLhZ5bSYY0slvd3MoWin4gNGSPqDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303146281699-tguf8bdan3b4uv7qlqva12bioi5tdkk3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
