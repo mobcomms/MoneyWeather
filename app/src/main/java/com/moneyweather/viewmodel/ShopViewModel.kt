@@ -1,9 +1,15 @@
 package com.moneyweather.viewmodel
 
+import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import com.enliple.banner.MobSDK
+import com.enliple.banner.common.Listener
+import com.enliple.banner.common.MobConstant
+import com.enliple.banner.view.DaroView
 import com.moneyweather.base.BaseApplication
 import com.moneyweather.base.BaseKotlinViewModel
 import com.moneyweather.data.remote.model.ApiUserModel
@@ -25,6 +31,16 @@ class ShopViewModel @Inject constructor(
     var resultCategoryList: MutableLiveData<List<ShopCategoryItem>> = MutableLiveData()
     var resultProductCount: MutableLiveData<Int> = MutableLiveData()
     var resultProductList: MutableLiveData<List<ShopProductItem>> = MutableLiveData()
+
+    fun getDaroShopBanner(context: FragmentActivity?): DaroView? {
+        if ( context == null )
+            return null
+        return MobSDK.getDaroView(
+            context,
+            MobConstant.DARO_AD_TYPE_BANNER,
+            MobConstant.DONSEE_SHOP_HOME_BANNER,
+            null)
+    }
 
     fun connectCategoryList() {
 

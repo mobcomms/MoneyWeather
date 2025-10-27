@@ -3,6 +3,8 @@ package com.moneyweather.view.fragment
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -41,6 +43,7 @@ import com.moneyweather.view.SettingActivity
 import com.moneyweather.view.ThemeSettingActivity
 import com.moneyweather.viewmodel.MainHomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Runnable
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -54,7 +57,7 @@ class MainHomeFragment : BaseKotlinFragment<FragmentHomeBinding, MainHomeViewMod
 
     private var screenPopupData: ScreenPopupsActiveResponse.Data? = null
     private var instanceBundle: Bundle? = null
-
+    private var isLightPopupCalled : Boolean = false
     override fun initStartView() {
         viewDataBinding.vm = viewModel
         initActionBar(viewDataBinding.iActionBar, R.string.bottom_nav_home, ActionBarLeftButtonEnum.THEME, ActionBarRightButtonEnum.SETTINGS)
@@ -106,7 +109,27 @@ class MainHomeFragment : BaseKotlinFragment<FragmentHomeBinding, MainHomeViewMod
             }
         })
 
+        if ( !isLightPopupCalled ) {
+            isLightPopupCalled = true
+            val daroLightPopup = viewModel.getDaroLightPopup(activity)
+
+            if ( daroLightPopup != null ) {
+                Handler(Looper.getMainLooper()).postDelayed(Runnable {
+                    viewDataBinding.mainDaroContainer.visibility = View.GONE
+                }, 8000)
+                viewDataBinding.mainDaroContainer.removeAllViews()
+                viewDataBinding.mainDaroContainer.addView(daroLightPopup)
+            }
+        }
+
+        val daroMrec = viewModel.getDaroMrec(activity)
+        if ( daroMrec != null ) {
+            viewDataBinding.mainDaroMrecContainer.removeAllViews()
+            viewDataBinding.mainDaroMrecContainer.addView(daroMrec)
+        }
+
         viewDataBinding.apply {
+
             recyclerProduct.layoutManager = LinearLayoutManager(
                 context,
                 RecyclerView.HORIZONTAL, false
@@ -185,6 +208,8 @@ class MainHomeFragment : BaseKotlinFragment<FragmentHomeBinding, MainHomeViewMod
         if (shouldShowContent) {
             viewModel.connectScreenPopupsActive()
         }
+
+
     }
 
     private fun popupInfo() {
