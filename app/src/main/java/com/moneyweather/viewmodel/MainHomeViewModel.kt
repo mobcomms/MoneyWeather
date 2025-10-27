@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.enliple.banner.MobSDK
 import com.enliple.banner.common.Listener
 import com.enliple.banner.common.MobConstant
+import com.enliple.banner.daro.AdUnit
 import com.enliple.banner.view.DaroView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.moneyweather.R
@@ -60,7 +61,7 @@ class MainHomeViewModel @Inject constructor(
         return MobSDK.getDaroView(
             context,
             MobConstant.DARO_AD_TYPE_LIGHT_POPUP,
-            MobConstant.DONSEE_INAPP_MAIN_SPLASH,
+            AdUnit.DONSEE_INAPP_MAIN_SPLASH,
             null)
     }
 
@@ -70,7 +71,7 @@ class MainHomeViewModel @Inject constructor(
         return MobSDK.getDaroView(
             context,
             MobConstant.DARO_AD_TYPE_MREC,
-            MobConstant.DONSEE_INAPP_HOME_MREC,
+            AdUnit.DONSEE_INAPP_HOME_MREC,
             null)
     }
 
