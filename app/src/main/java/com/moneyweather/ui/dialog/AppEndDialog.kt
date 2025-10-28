@@ -29,8 +29,6 @@ class AppEndDialog(context: Context,
 
     private fun initView() {
 
-//        MobSDK.loadDaroView(context, MobConstant.DARO_AD_TYPE_MREC, MobConstant.DONSEE_INAPP_MAIN_SPLASH, binder.daroAdContainer, null)
-
         var daroView = MobSDK.getDaroView(
             context,
             MobConstant.DARO_AD_TYPE_MREC,
