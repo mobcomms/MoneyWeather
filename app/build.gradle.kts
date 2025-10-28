@@ -29,8 +29,8 @@ android {
         applicationId = "com.moneyweather"
         minSdk = 26
         targetSdk = 35
-        versionCode = 74
-        versionName = "1.0.42"
+        versionCode = 75
+        versionName = "1.0.43"
 
         setProperty("archivesBaseName", "${appName}_v${versionName}($versionCode)_$date")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
