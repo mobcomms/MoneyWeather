@@ -117,4 +117,10 @@
 
     <color name="circle_progress_default">#bfbfbf</color>
     <color name="circle_progress">#4786ff</color>
+
+    <!-- 종료팝업 버튼 bg color -->
+    <color name="app_end_popup_bg_color">#f4f6f8</color>
+    <color name="app_end_popup_cancel_color">#ffd0de</color>
+    <color name="app_end_popup_end_text_color">#a3a5a6</color>
+    <color name="app_end_popup_cancel_text_color">#5c0d26</color>
 </resources>

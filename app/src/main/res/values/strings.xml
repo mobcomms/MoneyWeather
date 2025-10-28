@@ -477,4 +477,10 @@
     <string name="pomission_zone_title">포미션 충전소</string>"
 
     <string name="permissions_need_storage">저장소 권한이 필요합니다</string>
+
+    <!-- 종료 팝업 -->
+    <string name="app_end_popup_desc">돈씨를 종료할까요?</string>
+    <string name="app_end_btn_name">종료</string>
+    <string name="app_end_cancel_btn_name">취소</string>
+
 </resources>

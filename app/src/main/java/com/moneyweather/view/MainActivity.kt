@@ -13,6 +13,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.buzzvil.sdk.BuzzvilSdk
 import com.buzzvil.sdk.BuzzvilSdkUser
+import com.enliple.banner.MobSDK
 import com.enliple.datamanagersdk.ENDataManager
 import com.enliple.datamanagersdk.events.models.ENPageView
 import com.google.android.material.tabs.TabLayout
@@ -35,6 +36,7 @@ import com.moneyweather.model.enums.DialogType
 import com.moneyweather.model.enums.LandingPageEnum
 import com.moneyweather.service.LockScreenService
 import com.moneyweather.service.LockScreenService.Companion.serviceIntent
+import com.moneyweather.ui.dialog.AppEndDialog
 import com.moneyweather.ui.dialog.HCCommonDialog
 import com.moneyweather.util.CommonUtils
 import com.moneyweather.util.CustomToast
@@ -375,7 +377,11 @@ class MainActivity : BaseKotlinActivity<ActivityMainBinding, MainViewModel>(), V
     private val onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             if (TAB_HOME == mainTabPos) {
-                finish()
+//                finish()
+                // 앱 종료 팝업 띄우기
+                var dialog = AppEndDialog(context = this@MainActivity, finishButtonUnit = {finish()})
+                dialog.show()
+
             } else {
                 moveTab(TAB_HOME)
             }
