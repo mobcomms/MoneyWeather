@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.enliple.banner.MobSDK
 import com.enliple.banner.common.Listener
 import com.enliple.banner.common.MobConstant
+import com.enliple.banner.daro.AdUnit
 import com.enliple.banner.view.DaroView
 import com.moneyweather.base.BaseApplication
 import com.moneyweather.base.BaseKotlinViewModel
@@ -38,7 +39,7 @@ class ShopViewModel @Inject constructor(
         return MobSDK.getDaroView(
             context,
             MobConstant.DARO_AD_TYPE_BANNER,
-            MobConstant.DONSEE_SHOP_HOME_BANNER,
+            AdUnit.DONSEE_SHOP_HOME_BANNER,
             null)
     }
 
