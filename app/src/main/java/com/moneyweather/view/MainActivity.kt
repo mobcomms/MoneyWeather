@@ -379,8 +379,8 @@ class MainActivity : BaseKotlinActivity<ActivityMainBinding, MainViewModel>(), V
             if (TAB_HOME == mainTabPos) {
 //                finish()
                 // 앱 종료 팝업 띄우기
-                var dialog = AppEndDialog(context = this@MainActivity, finishButtonUnit = {finish()})
-                dialog.show()
+                var dialog = AppEndDialog(finishButtonUnit = {finish()})
+                dialog.show(supportFragmentManager, "appEndDialog")
 
             } else {
                 moveTab(TAB_HOME)

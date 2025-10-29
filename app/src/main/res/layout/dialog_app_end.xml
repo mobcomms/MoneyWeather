@@ -7,10 +7,21 @@
         android:background="@drawable/background_common_dialog"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+        <ImageView
+            android:id="@+id/ad_defence_image"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:visibility="invisible"
+            android:src="@drawable/adfail_defence_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/daro_ad_container"
             android:layout_width="300dp"
             android:layout_height="250dp"
+            android:visibility="invisible"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
