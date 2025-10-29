@@ -29,7 +29,7 @@ android {
         applicationId = "com.moneyweather"
         minSdk = 26
         targetSdk = 35
-        versionCode = 75
+        versionCode = 76
         versionName = "1.0.43"
 
         setProperty("archivesBaseName", "${appName}_v${versionName}($versionCode)_$date")
