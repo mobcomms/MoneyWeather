@@ -29,7 +29,7 @@ android {
         applicationId = "com.moneyweather"
         minSdk = 26
         targetSdk = 35
-        versionCode = 75
+        versionCode = 76
         versionName = "1.0.43"
 
         setProperty("archivesBaseName", "${appName}_v${versionName}($versionCode)_$date")
@@ -280,7 +280,7 @@ dependencies {
     implementation("com.jakewharton.threetenabp:threetenabp:1.4.4")
 
     // 에이닉
-    implementation(files("libs/en_banner_20251027.aar"))
+    implementation(files("libs/en_banner_20251028.aar"))
 
     // unity
 //    implementation("com.ironsource.sdk:mediationsdk:8.3.0")
